@@ -1,4 +1,4 @@
-﻿
+
 let friends = [];
 let counter = 1;
 let lang = 1;
@@ -197,6 +197,7 @@ function buildPeople(div, wrapper, arr) {
         }
 
         var dateNow = new Date();
+        var monthNow = dateNow.getMonth() + 1;
         var yearNow = dateNow.getFullYear();
 
         var date = new Date(people[i].birthday);
@@ -283,9 +284,15 @@ function buildPeople(div, wrapper, arr) {
         if ($(personWrapper).attr('gender') == 1) {
             gender = 'male.png';
             $(personWrapper).addClass('boy');
+            if (day == dateNow.getDate() && monthNow == month) {
+                $(personWrapper).addClass('boyBornToday');
+            }
         } else {
             gender = 'female.png';
             $(personWrapper).addClass('girl');
+            if (day == dateNow.getDate() && monthNow == month) {
+                $(personWrapper).addClass('girlBornToday');
+            }
         }
         
         if (lang == 1) {
