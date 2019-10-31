@@ -448,6 +448,16 @@ p {
     background-color: orange;
 }
 
+.boyBornToday {
+    background: lightblue url(../images/fireworks.png) no-repeat center center;
+    background-size: 100% 100%;
+}
+
+.girlBornToday {
+    background: pink url(../images/fireworks.png) no-repeat center center;
+    background-size: 100% 100%;
+}
+
 .clothesImg {
     position: absolute;
     bottom: 0;
