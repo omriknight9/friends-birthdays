@@ -1,4 +1,4 @@
-﻿
+
 {
     "friends" : [
 	{ "name": "Omri", "nameHeb": "עמרי", "birthday":"10/31/1990",  "image": "/omri.jpg", "facebook": "/omri.shalev.31", "instagram": "/omri_shalev9",  "group": 1.1, "gender": 1, "zodiac": "/scorpio.png"},
@@ -6,7 +6,7 @@
 	{ "name": "Tom", "nameHeb": "תום", "birthday": "07/31/1990", "image": "/tom.jpg", "facebook": "/tom.mendelson", "instagram": "/tomendelson", "group": 2.1, "gender": 1, "zodiac": "/leo.png"},
 	{ "name": "Chen", "nameHeb": "חן", "birthday": "06/19/1990", "image": "/chen.jpg", "facebook": "/chen.moutner", "instagram": "/chenmendelson2", "group": 2.2,  "gender": 2, "zodiac": "/gemini.png"},
 	{ "name": "Idan", "nameHeb": "עידן", "birthday": "08/15/1990", "image": "/idan.jpg", "facebook": "/idan.poor", "instagram": "/idanpur", "group": 3.1,  "gender": 1, "zodiac": "/leo.png"},
-	{ "name": "Amit", "nameHeb": "עמית", "birthday": "05/01/1992", "image": "/amit.jpg", "facebook": "/amit.wagner.16", "instagram": "/amitwagnerpur", "group": 3.1,  "gender": 2, "zodiac": "/taurus.png"},
+	{ "name": "Amit", "nameHeb": "עמית", "birthday": "03/01/1992", "image": "/amit.jpg", "facebook": "/amit.wagner.16", "instagram": "/amitwagnerpur", "group": 3.1,  "gender": 2, "zodiac": "/taurus.png"},
 	{ "name": "Gil", "nameHeb": "גיל", "birthday": "07/25/1990", "image": "/gil.jpg", "facebook": "/gil.tencer", "instagram": "/giltencer", "group": 4.1,  "gender": 1, "zodiac": "/leo.png"},
 	{ "name": "Gili", "nameHeb": "גילי", "birthday": "09/08/1993", "image": "/gili.jpg", "facebook": "/gilied", "instagram": "/gilieden", "group": 4.2,  "gender": 2, "zodiac": "/virgo.png"},
 	{ "name": "Omer", "nameHeb": "עומר", "birthday": "08/10/1990", "image": "/omer.jpg", "facebook": "/omer.shaarbani", "instagram": "/shaarbani", "group": 5.1,  "gender": 1, "zodiac": "/leo.png"},
