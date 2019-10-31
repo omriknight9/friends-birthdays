@@ -1,0 +1,114 @@
+﻿<!doctype html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Friends Birthdays</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="Friends Birthdays">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="icon" href="images/birthdayCake.png">
+    <link href="https://fonts.googleapis.com/css?family=Kurale&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css?family=David+Libre&display=swap" rel="stylesheet">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="js/translations.js" async defer></script>
+    <script type="text/javascript" src="js/addToCalendar.js" async defer></script>
+
+</head>
+<body>
+
+    <header>
+        <div class="headerContainer">
+            <div class="header">
+                <h1>Friends Birthdays</h1>
+                <div class="imgWrapper">           
+                    <a href="javascript:void(0)"><img src="images/usFlag.png" alt="us flag" id="langBtnEn" /></a>
+                    <a href="javascript:void(0)"><img src="images/israelFlag.png" alt="israel flag" id="langBtnHe" /></a>
+                </div>
+
+                <div class="searchContainer">
+                    <div class="searchContant">
+                        <input type="text" placeholder="Search Friends" id="search" aria-label="Search" autocomplete="off" />
+                        <span class="focus-border"></span>
+                        <img src="images/search.png" alt="search" id="searchImg">
+                        <div id="searchResults"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </header>
+
+    <main>
+
+        <div class="spinnerWrapper">
+            <div class="loader loader-1">
+                <div class="loader-outter"></div>
+                <div class="loader-inner"></div>
+            </div>
+        </div>
+
+        <div class="btnWrapper">
+            <div class="sortContainer">
+                <div class="sortContent">
+                    <button class="ageSortBtn" onclick="sortFriends('birthday', 1)">By Age</button>
+                    <button class="calendarSortBtn" onclick="sortFriends('calendar', 1)">By Date</button>
+                    <button class="nameSortBtn" onclick="sortFriends('name', 2)">By Name</button>
+                    <button class="groupSortBtn" onclick="sortFriends('group', 3)">By Group</button>
+                </div>
+            </div>
+            <button class="sortBtn" onclick="sort()">Sort</button>
+        </div>
+
+        <div class="container"></div>
+    </main>
+
+    <img src="images/upBtn.png" alt="up arrow" class="goToTopBtn" onclick="goToTop()" />
+
+    <!----------------POPUPS---------------->
+    <!------------Country Details----------->
+
+    <div id="personDetails" class="popUpInfo">
+        <div class="popupCont">
+            <div class="Xbtn"></div>
+            <h2 class="personNamePop"></h2>
+            <p class="nextBirthday"></p>
+            <div class="checkBirthdayWrapper">
+                <a href="" target="_blank" rel="noopener" id="checkBirthdaysLink">Check Your Birthday For Upcoming Years</a>
+            </div>
+            <div class="personCoverWrapper">
+                <img src="#" id="personCover" alt="person cover" />
+            </div>
+            
+            <div class="linksWrapper">
+                <a href="" target="_blank" id="facebookLink" rel="noopener"><img src="./images/facebook.png" alt="facebook image" id="facebookImage" /></a>
+                <a href="" target="_blank" id="instagramLink" rel="noopener"><img src="./images/instagram.png" alt="instagram image" id="instagramImage" /></a>
+            </div>
+            <div class="popupBtnsWrapper">
+                <div title="Add to Calendar" class="addeventatc engCaneldar" data-direct="google">
+                    Add To Calendar
+                    <span class="start"></span>
+                    <span class="end"></span>
+                    <span class="timezone"></span>
+                    <span class="title"></span>
+                    <span class="location"></span>
+                </div>
+                <div title="הוסף ללוח שנה" class="addeventatc hebCaneldar" data-direct="google">
+                    הוסף ללוח שנה
+                    <span class="start"></span>
+                    <span class="end"></span>
+                    <span class="timezone"></span>
+                    <span class="title"></span>
+                    <span class="location"></span>
+                </div>
+                <button class="popupBtn" id="" onclick="closeCurrentPopup($(this))">Close</button>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>

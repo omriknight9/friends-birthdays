@@ -1,0 +1,56 @@
+
+body {
+    font-family: 'David Libre', serif;
+}
+
+.popupBtn {
+    font-family: 'David Libre', serif;
+}
+
+.container {
+    direction: rtl;
+}
+
+#search {
+    direction: rtl;
+}
+
+#searchImg {
+    right: unset;
+    left: 1rem;
+}
+
+.nextBirthday, .btnWrapper, .sortContainer {
+    direction: rtl;
+}
+
+.addeventatc {
+    padding: 13px 43px 12px 12px;
+    font-family: 'David Libre', serif !important;
+}
+
+.addeventatc .addeventatc_icon {
+    left: unset;
+    right: 8px;
+}
+
+.personWrapper p {
+    font-size: 1.3rem;
+}
+
+.popUpInfo p {
+    font-size: 1.3rem;
+}
+
+@media only screen and (max-width: 440px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+}
+
+@media only screen and (max-width: 370px) {
+
+    h1 {
+        font-size: 1.2rem;
+    }
+}
