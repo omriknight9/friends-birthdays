@@ -10,7 +10,7 @@ function changeToHeb() {
     $('h1').hide().html('ימי הולדת - חברים').fadeIn('slow');
     $('#search').hide().attr('placeholder', 'חפש בחברים').fadeIn('slow');
 
-    $('.sortBtn').hide().html('סדר').fadeIn('slow');
+    $('.sortBtn').hide().html('מיין').fadeIn('slow');
 
     $('.ageSortBtn').hide().html('לפי גיל').fadeIn('slow');
     $('.nameSortBtn').hide().html('לפי שם').fadeIn('slow');
