@@ -307,9 +307,98 @@ function buildPeople(div, wrapper, arr) {
             alt: 'gender img'
         }).appendTo(personWrapper);
 
+        let zodiac;
+
+        switch(month) {
+            case '01': case 01:
+                if (day < 20) {
+                    zodiac = '/capricorn.png';
+                } else {
+                    zodiac = '/aquarius.png';
+                }
+                break;
+            case '02': case 02:
+                if (day < 19) {
+                    zodiac = '/aquarius.png';
+                } else {
+                    zodiac = '/pisces.png';
+                }
+                break;
+            case '03': case 03:
+                if (day < 21) {
+                    zodiac = '/pisces.png';
+                } else {
+                    zodiac = '/aries.png';
+                }
+                break;
+            case '04': case 04:
+                if (day < 20) {
+                    zodiac = '/aries.png';
+                } else {
+                    zodiac = '/taurus.png';
+                }
+                break;
+            case '05': case 05:
+                if (day < 21) {
+                    zodiac = '/taurus.png';
+                } else {
+                    zodiac = '/gemini.png';
+                }
+                break;
+            case '06': case 06:
+                if (day < 21) {
+                    zodiac = '/gemini.png';
+                } else {
+                    zodiac = '/cancer.png';
+                }
+                break;
+            case '07': case 07:
+                if (day < 23) {
+                    zodiac = '/cancer.png';
+                } else {
+                    zodiac = '/leo.png';
+                }
+                break;
+            case '08': case 08:
+                if (day < 23) {
+                    zodiac = '/leo.png';
+                } else {
+                    zodiac = '/virgo.png';
+                }
+                break;
+            case '09': case 09:
+                if (day < 23) {
+                    zodiac = '/virgo.png';
+                } else {
+                    zodiac = '/libra.png';
+                }
+                break;
+            case '10': case 10:
+                if (day < 23) {
+                    zodiac = '/libra.png';
+                } else {
+                    zodiac = '/scorpio.png';
+                }
+                break;
+            case '11': case 11:
+                if (day < 22) {
+                    zodiac = '/scorpio.png';
+                } else {
+                    zodiac = '/sagittarius.png';
+                }
+                break;
+            case '12': case 12:
+                if (day < 22) {
+                    zodiac = '/sagittarius.png';
+                } else {
+                    zodiac = '/capricorn.png';
+                }
+                break;
+        }
+
         var zodiacImg = $('<img>', {
             class: 'zodiacImg',
-            src: './images/zodiac' + people[i].zodiac,
+            src: './images/zodiac' + zodiac,
             alt: 'zodiac img'
         }).appendTo(personWrapper);
 
