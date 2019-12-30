@@ -228,6 +228,7 @@ function buildPeople(div, wrapper, arr) {
             'group': people[i].group,
             'img': people[i].image,
             'isParent': people[i].parent,
+            'married': people[i].married,
             'gender': people[i].gender,
             'facebook': people[i].facebook,
             'instagram': people[i].instagram,
@@ -408,16 +409,32 @@ function buildPeople(div, wrapper, arr) {
             $(personWrapper).appendTo(parentDiv);
             if ($(personWrapper).attr('gender') == 1) {
                 $(personWrapper).addClass('suit');
-                // buildCloths('suitImg', 'suit', 'suit img', personWrapper);
+                buildCloths('suitImg', 'suit', 'suit img', personWrapper);
             } else {
-                // buildCloths('dressImg', 'dress', 'dress img', personWrapper);
+                buildCloths('dressImg', 'dress', 'dress img', personWrapper);
             }
 
         } else {
             if ($(personWrapper).attr('gender') == 1) {
-                // buildCloths('babyBoyImg', 'babyBoy', 'baby boy img', personWrapper);
+                if (age < 5) {
+                    buildCloths('babyBoyImg', 'babyBoy', 'baby boy img', personWrapper);
+                } else {
+                    if ($(personWrapper).attr('married') == 1) {
+                        buildCloths('suitImg', 'suit', 'suit img', personWrapper);
+                    } else {
+                        buildCloths('boyImg', 'boy', 'boy img', personWrapper);
+                    }
+                }
             } else {
-                // buildCloths('babyGirlImg', 'babyGirl', 'baby girl img', personWrapper);
+                if (age < 5) {
+                    buildCloths('babyGirlImg', 'babyGirl', 'baby girl img', personWrapper);
+                } else {
+                    if ($(personWrapper).attr('married') == 1) {
+                        buildCloths('dressImg', 'dress', 'dress img', personWrapper);
+                    } else {
+                        buildCloths('girlImg', 'girl', 'girl img', personWrapper);
+                    }
+                }
             }
             $(personWrapper).appendTo(groupWrapper);
         }
@@ -429,7 +446,6 @@ function buildPeople(div, wrapper, arr) {
         } else {
             $(personWrapper).attr('calendar', $(personWrapper).attr('calendar') + '/' + year);
         }
-
         
         var personDetailsWrapper = $('<div>', {
             class: 'personDetailsWrapper',
