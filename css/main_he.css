@@ -7,11 +7,7 @@ body {
     font-family: 'David Libre', serif;
 }
 
-.container {
-    direction: rtl;
-}
-
-#search {
+.container, #search, #closestBirth {
     direction: rtl;
 }
 
