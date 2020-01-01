@@ -3,9 +3,11 @@ let friends = [];
 let counter = 1;
 let lang = 1;
 
-let d = new Date();
-let currentYear = d.getFullYear();
+let now = new Date();
+let currentYear = now.getFullYear();
 let sortBtnCounter = 1;
+
+let birthdayArr = [];
 
 $(document).ready(function (event) {
     loadJson('./lists/friends.txt');
@@ -407,6 +409,7 @@ function buildPeople(div, wrapper, arr) {
 
         if ($(personWrapper).attr('isParent') == 1) {
             $(personWrapper).appendTo(parentDiv);
+            $(parentDiv).css('display', 'flex');
             if ($(personWrapper).attr('gender') == 1) {
                 $(personWrapper).addClass('suit');
                 buildCloths('suitImg', 'suit', 'suit img', personWrapper);
@@ -415,6 +418,7 @@ function buildPeople(div, wrapper, arr) {
             }
 
         } else {
+            $(parentDiv).remove();
             if ($(personWrapper).attr('gender') == 1) {
                 if (age < 5) {
                     buildCloths('babyBoyImg', 'babyBoy', 'baby boy img', personWrapper);
@@ -441,7 +445,7 @@ function buildPeople(div, wrapper, arr) {
 
         var selectedDate = new Date($(personWrapper).attr('calendar') + '/' + year);
 
-        if (selectedDate < d) {
+        if (selectedDate < now) {
             $(personWrapper).attr('calendar', $(personWrapper).attr('calendar') + '/' + Number(year + 1));
         } else {
             $(personWrapper).attr('calendar', $(personWrapper).attr('calendar') + '/' + year);
@@ -474,9 +478,53 @@ function buildPeople(div, wrapper, arr) {
 
     setTimeout(function () {
         checkAge();
+        checkClosest();
         $('.btnWrapper').css('opacity', 1);
         $('.spinnerWrapper').hide();
     }, 0);
+}
+
+function checkClosest() {
+    let year;
+    birthdayArr = [];
+    for (let i = 0; i < $('.groupWrapper .personWrapper').length; i++) {
+        let name = $($('.groupWrapper .personWrapper')[i]).attr('name');
+        let nameHeb = $($('.groupWrapper .personWrapper')[i]).attr('nameHeb');
+        let birthdayDay = $($('.groupWrapper .personWrapper')[i]).attr('day');
+        let birthdayMonth = $($('.groupWrapper .personWrapper')[i]).attr('month');
+        let gender = $($('.groupWrapper .personWrapper')[i]).attr('gender');
+        let date = new Date(now.getFullYear() + '/' + birthdayMonth + '/' + birthdayDay);
+
+        if (date < now) {
+            year = now.getFullYear() + 1;
+        } else {
+            year = now.getFullYear();
+        }
+        
+        let finalDate = new Date(year + '/' + birthdayMonth + '/' + birthdayDay);
+        birthdayArr.push({'name': name, gender: gender, 'nameHeb': nameHeb, date: finalDate});
+    }
+    setTimeout(function() {
+
+        birthdayArr.sort(function(a, b) {
+            var distancea = Math.abs(now - a.date);
+            var distanceb = Math.abs(now - b.date);
+            return distancea - distanceb;
+        });
+
+        if (lang == 1) {
+            $('#closestBirth').html('Closest Birthday: ' + "<span id='birthdayColor'>" + birthdayArr[0].name + "</span>");
+        } else {
+            $('#closestBirth').append('החוגג הקרוב: ' + "<span id='birthdayColor'>" + birthdayArr[0].nameHeb + "</span>");
+        }
+
+        if (birthdayArr[0].gender == 1) {
+            $('#birthdayColor').css('color', 'lightblue');
+        } else {
+            $('#birthdayColor').css('color', 'pink');
+        }
+
+    }, 1000);
 }
 
 function checkAge() {
@@ -572,7 +620,7 @@ function sortFriends(elem1, kind) {
     $('.groupWrapper').removeClass('evenGroup');
 
     if (elem1 == 'calendar') {
-        counter = 2;
+        // counter = 2;
     }
 
     else if ($('.btnWrapper').attr('kind') == kind) {
