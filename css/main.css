@@ -375,6 +375,14 @@ p {
     text-align: center;
 }
 
+#closestBirth {
+    font-size: 1.5rem;
+}
+
+#birthdayColor {
+    text-shadow: 1px 1px 6px black;
+}
+
 .container {
     display: flex;
     box-sizing: border-box;
@@ -399,7 +407,7 @@ p {
 
 .parentDiv {
     width: 100%;
-    display: flex;
+    display: none;
     box-sizing: border-box;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
