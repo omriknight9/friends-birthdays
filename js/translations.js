@@ -11,6 +11,7 @@ function changeToHeb() {
     $('#search').hide().attr('placeholder', 'חפש בחברים').fadeIn('slow');
 
     $('#closestBirth').html('');
+    $('#BirthdayWish').html('');
 
     $('.sortBtn').hide().html('מיין').fadeIn('slow');
 
@@ -40,6 +41,7 @@ function changeToEng() {
     $('#search').hide().attr('placeholder', 'Search A Friend').fadeIn('slow');
 
     $('#closestBirth').html('');
+    $('#BirthdayWish').html('');
 
     $('.sortBtn').hide().html('Sort').fadeIn('slow');
 
