@@ -589,19 +589,34 @@ function checkClosest() {
         });
 
         if (lang == 1) {
+            let gender;
             if (birthdayToday) {
                 $.each($('.personWrapper'), function (key, value) {
                     if ($(value).attr('name') == birthdayArr[0].name) {
-                        $(value).clone().insertAfter($('#closestBirth'));
+                        $(value).clone().insertAfter($('#BirthdayWish'));
                         $('.personWrapper').first().css('margin', '1rem auto 1rem auto');
                         let personId = $('.personWrapper').first().attr('numId');
                         $('.personWrapper').first().click(function() {
                             goToBirthdayPerson(personId);
-                        })
+                        });
+
+                        if ($(value).attr('gender') == 1) {
+                            gender = 1;
+                        } else {
+                            gender = 2;
+                        }
                     }
                 });
 
+                let facebookLink = $('.personWrapper').first().attr('facebook');
+
                 $('#closestBirth').html("It's " + "<span id='birthdayColor'>" + birthdayArr[0].name + "'s" +  "</span>" + " Birthday Today!");
+                if (gender == 1) {
+                    $('#BirthdayWish').append($('<a>', {href:'https://www.facebook.com' + facebookLink, target:'_blank', text:'Wish Him Happy Birthday'}));
+                } else {
+                    $('#BirthdayWish').append($('<a>', {href:'https://www.facebook.com' + facebookLink, target:'_blank', text:'Wish Her Happy Birthday'}));
+                }
+                
             } else {
                 $('#closestBirth').html('Closest Birthday: ' + "<span id='birthdayColor'>" + birthdayArr[0].name + "</span>");
             }
@@ -611,7 +626,7 @@ function checkClosest() {
                 let gender;
                 $.each($('.personWrapper'), function (key, value) {
                     if ($(value).attr('name') == birthdayArr[0].name) {
-                        $(value).clone().insertAfter($('#closestBirth'));
+                        $(value).clone().insertAfter($('#BirthdayWish'));
                         $('.personWrapper').first().css('margin', '1rem auto 1rem auto');
                         let personId = $('.personWrapper').first().attr('numId');
                         $('.personWrapper').first().click(function() {
@@ -625,14 +640,18 @@ function checkClosest() {
                         }
                     }
                 });
+
+                let facebookLink = $('.personWrapper').first().attr('facebook');
                 if (gender == 1) {
-                    $('#closestBirth').append("<span id='birthdayColor'>" + birthdayArr[0].nameHeb + "</span>" + " חוגג היום!");
+                    $('#closestBirth').html("<span id='birthdayColor'>" + birthdayArr[0].nameHeb + "</span>" + " חוגג היום!");
+                    $('#BirthdayWish').append($('<a>', {href:'https://www.facebook.com' + facebookLink, target:'_blank', text:'אחל/י לו יום הולדת שמח'}));
                 } else {
-                    $('#closestBirth').append("<span id='birthdayColor'>" + birthdayArr[0].nameHeb + "</span>" + " חוגגת היום!");
+                    $('#closestBirth').html("<span id='birthdayColor'>" + birthdayArr[0].nameHeb + "</span>" + " חוגגת היום!");
+                    $('#BirthdayWish').append($('<a>', {href:'https://www.facebook.com' + facebookLink, target:'_blank', text:'אחל/י לה יום הולדת שמח'}));
                 }
                 
             } else {
-                $('#closestBirth').append('החוגג הקרוב: ' + "<span id='birthdayColor'>" + birthdayArr[0].nameHeb + "</span>");
+                $('#closestBirth').html('החוגג הקרוב: ' + "<span id='birthdayColor'>" + birthdayArr[0].nameHeb + "</span>");
             }
         }
 
@@ -835,6 +854,7 @@ function sortFriends(elem1, kind) {
                 break;
             case 3:
                 $('#closestBirth').html('');
+                $('#BirthdayWish').html('');
                 if (birthdayToday) {
                     $('.personWrapper').first().remove();
                 }
