@@ -10,6 +10,8 @@ function changeToHeb() {
     $('h1').hide().html('ימי הולדת - חברים').fadeIn('slow');
     $('#search').hide().attr('placeholder', 'חפש בחברים').fadeIn('slow');
 
+    $('#closestBirth').html('');
+
     $('.sortBtn').hide().html('מיין').fadeIn('slow');
 
     $('.ageSortBtn').hide().html('לפי גיל').fadeIn('slow');
@@ -36,6 +38,8 @@ function changeToEng() {
     $('title').html('Friends Birthdays');
     $('h1').hide().html('Friends Birthdays').fadeIn('slow');
     $('#search').hide().attr('placeholder', 'Search A Friend').fadeIn('slow');
+
+    $('#closestBirth').html('');
 
     $('.sortBtn').hide().html('Sort').fadeIn('slow');
 
