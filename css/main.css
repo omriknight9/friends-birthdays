@@ -378,7 +378,7 @@ p {
     text-align: center;
 }
 
-#closestBirth {
+#closestBirth, #BirthdayWish {
     font-size: 1.5rem;
 }
 
