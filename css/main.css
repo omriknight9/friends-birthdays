@@ -394,6 +394,35 @@ p {
     text-shadow: 1px 1px 6px black;
 }
 
+.hoverImgContainer {
+    position: relative;
+    margin: auto;
+    width: 43rem;
+    z-index: 8;
+}
+
+.hoverImgWrapper {
+    position: absolute;
+    display: flex;
+    box-sizing: border-box;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: url(../images/thought.png) center center no-repeat;
+    background-size: 15rem 15rem;
+    width: 17rem;
+    height: 20rem;
+    top: -2rem;
+    right: 0;
+    margin: auto;  
+}
+
+.hoverImg {
+    widows: 7rem;
+    height: 7rem;
+    border-radius: 50%;
+}
+
 .container {
     display: flex;
     box-sizing: border-box;
@@ -795,7 +824,6 @@ p {
 }
 
 @media only screen and (max-width: 765px) {
-
     .personWrapper p {
         font-size: 1.1rem;
     }
