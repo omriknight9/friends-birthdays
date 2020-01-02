@@ -166,7 +166,8 @@ button:active {
 #searchResults {
     display: none;
     position: absolute;
-    background-image: linear-gradient(-180deg, #3fe09b, white);
+    /* background-image: linear-gradient(-180deg, #3fe09b, white); */
+    background-image: linear-gradient(to right, rgba(200, 200, 200, .95), rgba(100,0,0,.95));
     box-shadow: 0 3px 8px 0 #848484;
     border-radius: 5px;
     height: 15rem;
@@ -208,6 +209,7 @@ button:active {
     border-bottom: 1px solid #ccc;
     background: none;
     font-family: Kurale, sans-serif;
+    color: white;
 }
 
 #search::placeholder {
