@@ -775,11 +775,34 @@ function getAge(div, dateString, calendar) {
         }
     }
 
+
     if (age == 0) {
-        if (lang == 1) {
-            age = today.getMonth() - (birthDate.getMonth() + 1) + ' Months';
+
+        let finalAge;
+        let finalMonth;
+        let finalDay;
+
+        if (today.getMonth() + 1 < 10) {
+            finalMonth = '0' + Math.round(today.getMonth() + 1);
         } else {
-            age = today.getMonth() - (birthDate.getMonth() + 1) + ' חודשים';
+            finalMonth = today.getMonth() + 1;
+        }
+        if (today.getDate() < 10) {
+            finalDay = '0' + Math.round(today.getDate());
+        } else {
+            finalDay = today.getDate();
+        }
+
+        let infantAge = finalMonth + '/' + finalDay + '/' + today.getFullYear();
+        const date1 = new Date(dateString);
+        const date2 = new Date(infantAge);
+
+        finalAge = (date2.getFullYear() - date1.getFullYear()) * 12 + (date2.getMonth() - date1.getMonth());
+
+        if (lang == 1) {
+            age = finalAge + ' Months';
+        } else {
+            age = finalAge + ' חודשים';
         }
     }
 
