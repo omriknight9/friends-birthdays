@@ -817,8 +817,8 @@ function checkAge() {
 function buildCloths(param, img, alt, wrapper) {
     
     var param = $('<img>', {
-        class: 'clothesImg',
-        id: img,
+        class: 'clothesImg ' + img,
+        // id: img,
         src: './images/' + img + '.webp',
         alt: alt
     }).appendTo(wrapper);
