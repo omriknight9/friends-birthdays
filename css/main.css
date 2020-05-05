@@ -593,6 +593,17 @@ p {
     z-index: 999;
 }
 
+#birthdayToday {
+    width: 100%;
+    display: flex;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
+    justify-content: center;
+}
+
 /*------------------------Popups-------------------------*/
     
 .popUpInfo {
