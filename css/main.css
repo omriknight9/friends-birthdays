@@ -860,7 +860,7 @@ p {
         width: 12rem;
     }
 
-    #dress {
+    .dress {
         height: 80%;
     }
 }
@@ -911,7 +911,7 @@ p {
         height: 80%;
     }
 
-    #suit {
+    .suit {
         opacity: .15;
     }
 
