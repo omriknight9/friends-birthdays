@@ -578,12 +578,11 @@ function checkClosest() {
             year = now.getFullYear();
         }
         
-        let finalDate = new Date(year + '/' + birthdayMonth + '/' + birthdayDay);
-        birthdayArr.push({name: name, gender: gender, nameHeb: nameHeb, date: finalDate, img: img});
-        
+        var finalDate = new Date(year + '/' + birthdayMonth + '/' + birthdayDay);
+        birthdayArr.push({name: name, gender: gender, nameHeb: nameHeb, date: finalDate, img: img});  
     }
-    setTimeout(function() {
 
+    setTimeout(function() {
         birthdayArr.sort(function(a, b) {
             var distancea = Math.abs(now - a.date);
             var distanceb = Math.abs(now - b.date);
@@ -594,16 +593,7 @@ function checkClosest() {
             let gender;
             if (birthdayToday) {
                 $.each($('.personWrapper'), function (key, value) {
-                    if ($(value).attr('name') == birthdayArr[0].name) {
-                        $(value).clone().appendTo($('#birthdayToday'));
-                        if ($(value).attr('gender') == 1) {
-                            gender = 1;
-                        } else {
-                            gender = 2;
-                        }
-                    }
-
-                    if ($(value).attr('name') == birthdayArr[1].name) {
+                    if ($(value).attr('month') == now.getMonth() + 1 && $(value).attr('day') == now.getDate()) {
                         $(value).clone().appendTo($('#birthdayToday'));
                         if ($(value).attr('gender') == 1) {
                             gender = 1;
@@ -623,14 +613,11 @@ function checkClosest() {
                     let closestSpanName = $('<span>',{
                         class: 'birthdayColor',
                         text: birthdayArr[key].name
-
                     }).appendTo(closest);
-
-                    
+                 
                     let closestSpan = $('<span>',{
                         class: 'closestSpan',
                         text: "'s" + " Birthday Today!"
-
                     }).appendTo(closest);
 
                     let birthdayWish = $('<p>', {
@@ -712,19 +699,8 @@ function checkClosest() {
 
         } else {
             if (birthdayToday) {
-                let gender;
                 $.each($('.personWrapper'), function (key, value) {
-                    if ($(value).attr('name') == birthdayArr[0].name) {
-                        $(value).clone().appendTo($('#birthdayToday'));
-
-                        if ($(value).attr('gender') == 1) {
-                            gender = 1;
-                        } else {
-                            gender = 2;
-                        }
-                    }
-
-                    if ($(value).attr('name') == birthdayArr[1].name) {
+                    if ($(value).attr('month') == now.getMonth() + 1 && $(value).attr('day') == now.getDate()) {
                         $(value).clone().appendTo($('#birthdayToday'));
                         if ($(value).attr('gender') == 1) {
                             gender = 1;
