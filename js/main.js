@@ -330,7 +330,7 @@ function buildPeople(div, wrapper, arr) {
         let newMonth;
 
         if ($(personWrapper).attr('gender') == 1) {
-            gender = 'male.png';
+            gender = 'male.webp';
             $(personWrapper).addClass('boy');
 
             if (day.toString().charAt(0) == '0') {
@@ -350,7 +350,7 @@ function buildPeople(div, wrapper, arr) {
             }
 
         } else {
-            gender = 'female.png';
+            gender = 'female.webp';
             $(personWrapper).addClass('girl');
 
             if (day.toString().charAt(0) == '0') {
@@ -387,86 +387,86 @@ function buildPeople(div, wrapper, arr) {
         switch(month) {
             case '01': case 01:
                 if (day < 20) {
-                    zodiac = '/capricorn.png';
+                    zodiac = '/capricorn.webp';
                 } else {
-                    zodiac = '/aquarius.png';
+                    zodiac = '/aquarius.webp';
                 }
                 break;
             case '02': case 02:
                 if (day < 19) {
-                    zodiac = '/aquarius.png';
+                    zodiac = '/aquarius.webp';
                 } else {
-                    zodiac = '/pisces.png';
+                    zodiac = '/pisces.webp';
                 }
                 break;
             case '03': case 03:
                 if (day < 21) {
-                    zodiac = '/pisces.png';
+                    zodiac = '/pisces.webp';
                 } else {
-                    zodiac = '/aries.png';
+                    zodiac = '/aries.webp';
                 }
                 break;
             case '04': case 04:
                 if (day < 20) {
-                    zodiac = '/aries.png';
+                    zodiac = '/aries.webp';
                 } else {
-                    zodiac = '/taurus.png';
+                    zodiac = '/taurus.webp';
                 }
                 break;
             case '05': case 05:
                 if (day < 21) {
-                    zodiac = '/taurus.png';
+                    zodiac = '/taurus.webp';
                 } else {
-                    zodiac = '/gemini.png';
+                    zodiac = '/gemini.webp';
                 }
                 break;
             case '06': case 06:
                 if (day < 21) {
-                    zodiac = '/gemini.png';
+                    zodiac = '/gemini.webp';
                 } else {
-                    zodiac = '/cancer.png';
+                    zodiac = '/cancer.webp';
                 }
                 break;
             case '07': case 07:
                 if (day < 23) {
-                    zodiac = '/cancer.png';
+                    zodiac = '/cancer.webp';
                 } else {
-                    zodiac = '/leo.png';
+                    zodiac = '/leo.webp';
                 }
                 break;
             case '08': case 08:
                 if (day < 23) {
-                    zodiac = '/leo.png';
+                    zodiac = '/leo.webp';
                 } else {
-                    zodiac = '/virgo.png';
+                    zodiac = '/virgo.webp';
                 }
                 break;
             case '09': case 09:
                 if (day < 23) {
-                    zodiac = '/virgo.png';
+                    zodiac = '/virgo.webp';
                 } else {
-                    zodiac = '/libra.png';
+                    zodiac = '/libra.webp';
                 }
                 break;
             case '10': case 10:
                 if (day < 23) {
-                    zodiac = '/libra.png';
+                    zodiac = '/libra.webp';
                 } else {
-                    zodiac = '/scorpio.png';
+                    zodiac = '/scorpio.webp';
                 }
                 break;
             case '11': case 11:
                 if (day < 22) {
-                    zodiac = '/scorpio.png';
+                    zodiac = '/scorpio.webp';
                 } else {
-                    zodiac = '/sagittarius.png';
+                    zodiac = '/sagittarius.webp';
                 }
                 break;
             case '12': case 12:
                 if (day < 22) {
-                    zodiac = '/sagittarius.png';
+                    zodiac = '/sagittarius.webp';
                 } else {
-                    zodiac = '/capricorn.png';
+                    zodiac = '/capricorn.webp';
                 }
                 break;
         }
@@ -580,6 +580,7 @@ function checkClosest() {
         
         let finalDate = new Date(year + '/' + birthdayMonth + '/' + birthdayDay);
         birthdayArr.push({name: name, gender: gender, nameHeb: nameHeb, date: finalDate, img: img});
+        
     }
     setTimeout(function() {
 
@@ -594,13 +595,16 @@ function checkClosest() {
             if (birthdayToday) {
                 $.each($('.personWrapper'), function (key, value) {
                     if ($(value).attr('name') == birthdayArr[0].name) {
-                        $(value).clone().insertAfter($('#BirthdayWish'));
-                        $('.personWrapper').first().css('margin', '1rem auto 1rem auto');
-                        let personId = $('.personWrapper').first().attr('numId');
-                        $('.personWrapper').first().click(function() {
-                            goToBirthdayPerson(personId);
-                        });
+                        $(value).clone().appendTo($('#birthdayToday'));
+                        if ($(value).attr('gender') == 1) {
+                            gender = 1;
+                        } else {
+                            gender = 2;
+                        }
+                    }
 
+                    if ($(value).attr('name') == birthdayArr[1].name) {
+                        $(value).clone().appendTo($('#birthdayToday'));
                         if ($(value).attr('gender') == 1) {
                             gender = 1;
                         } else {
@@ -609,23 +613,80 @@ function checkClosest() {
                     }
                 });
 
-                let facebookLink = $('.personWrapper').first().attr('facebook');
+                $.each($('#birthdayToday .personWrapper'), function (key, value) {
+                    let closest = $('<p>',{
+                        class: 'closestBirth',
+                        text: "It's "
 
-                $('#closestBirth').html("It's " + "<span id='birthdayColor'>" + birthdayArr[0].name + "'s" +  "</span>" + " Birthday Today!");
-                if (gender == 1) {
-                    $('#BirthdayWish').append($('<a>', {href:'https://www.facebook.com' + facebookLink, target:'_blank', text:'Wish Him Happy Birthday'}));
-                } else {
-                    $('#BirthdayWish').append($('<a>', {href:'https://www.facebook.com' + facebookLink, target:'_blank', text:'Wish Her Happy Birthday'}));
-                }
+                    }).insertAfter($('.spinnerWrapper'));
+
+                    let closestSpanName = $('<span>',{
+                        class: 'birthdayColor',
+                        text: birthdayArr[key].name
+
+                    }).appendTo(closest);
+
+                    
+                    let closestSpan = $('<span>',{
+                        class: 'closestSpan',
+                        text: "'s" + " Birthday Today!"
+
+                    }).appendTo(closest);
+
+                    let birthdayWish = $('<p>', {
+                        class: 'birthdayWish'
+                    }).insertAfter(closest);
+
+                    if ($(value).attr('facebook') !== 'null') {
+                        let birthdayText;
+                        if (birthdayArr[key].gender == 1) {
+                            birthdayText = 'Wish Him Happy Birthday';
+                        } else {
+                            birthdayText = 'Wish Her Happy Birthday';
+                        }
+
+                        let facebookTest = $('<a>', {
+                            href: 'https://www.facebook.com' + $(value).attr('facebook'),
+                            target: '_blank',
+                            text: birthdayText
+                        }).appendTo(birthdayWish);
+                    }
+
+                    $(value).click(function() {
+                        goToBirthdayPerson($(value).attr('numid'));
+                    })
+
+                    if (birthdayArr[key].gender == 1) {
+                        $(closestSpanName).css('color', 'lightblue');
+                    } else {
+                        $(closestSpanName).css('color', 'pink');
+                    }
+                });
                 
             } else {
-                $('#closestBirth').html('Closest Birthday: ' + "<span id='birthdayColor'>" + birthdayArr[0].name + "</span>");
+
+                let closest = $('<p>',{
+                    class: 'closestBirth',
+                    text: 'Closest Birthday: '
+                }).insertAfter($('.spinnerWrapper'));
+
+                let closestSpan = $('<span>', {
+                    class: 'birthdayColor',
+                    text: birthdayArr[0].name
+                }).appendTo(closest);
+
+                if (birthdayArr[0].gender == 1) {
+                    $('.birthdayColor').css('color', 'lightblue');
+                } else {
+                    $('.birthdayColor').css('color', 'pink');
+                }
+
                 if ($(window).width() > 765) {
-                    $('#closestBirth').mouseenter(function () {
+                    $('.closestBirth').mouseenter(function () {
                         if (!$('#searchResults').is(':visible')) {
                             let hoverImgContainer = $('<div>', {
                                 class: 'hoverImgContainer',
-                            }).hide().appendTo($('#closestBirth')).fadeIn();
+                            }).hide().appendTo($('.closestBirth')).fadeIn();
                             
                             let hoverImgWrapper = $('<div>', {
                                 class: 'hoverImgWrapper',
@@ -638,12 +699,12 @@ function checkClosest() {
                         }
                     });
                  
-                    $('#closestBirth').mouseleave(function () {
+                    $('.closestBirth').mouseleave(function () {
                         $('.hoverImgContainer').fadeOut(400);
-                        $('#closestBirth').css('pointer-events', 'none');
+                        $('.closestBirth').css('pointer-events', 'none');
                         setTimeout(function() {
                             $('.hoverImgContainer').remove();
-                            $('#closestBirth').css('pointer-events', 'all');
+                            $('.closestBirth').css('pointer-events', 'all');
                         }, 600);
                     }).mouseleave()
                 }
@@ -654,13 +715,17 @@ function checkClosest() {
                 let gender;
                 $.each($('.personWrapper'), function (key, value) {
                     if ($(value).attr('name') == birthdayArr[0].name) {
-                        $(value).clone().insertAfter($('#BirthdayWish'));
-                        $('.personWrapper').first().css('margin', '1rem auto 1rem auto');
-                        let personId = $('.personWrapper').first().attr('numId');
-                        $('.personWrapper').first().click(function() {
-                            goToBirthdayPerson(personId);
-                        })
+                        $(value).clone().appendTo($('#birthdayToday'));
 
+                        if ($(value).attr('gender') == 1) {
+                            gender = 1;
+                        } else {
+                            gender = 2;
+                        }
+                    }
+
+                    if ($(value).attr('name') == birthdayArr[1].name) {
+                        $(value).clone().appendTo($('#birthdayToday'));
                         if ($(value).attr('gender') == 1) {
                             gender = 1;
                         } else {
@@ -669,23 +734,69 @@ function checkClosest() {
                     }
                 });
 
-                let facebookLink = $('.personWrapper').first().attr('facebook');
-                if (gender == 1) {
-                    $('#closestBirth').html("<span id='birthdayColor'>" + birthdayArr[0].nameHeb + "</span>" + " חוגג היום!");
-                    $('#BirthdayWish').append($('<a>', {href:'https://www.facebook.com' + facebookLink, target:'_blank', text:'אחל/י לו יום הולדת שמח'}));
-                } else {
-                    $('#closestBirth').html("<span id='birthdayColor'>" + birthdayArr[0].nameHeb + "</span>" + " חוגגת היום!");
-                    $('#BirthdayWish').append($('<a>', {href:'https://www.facebook.com' + facebookLink, target:'_blank', text:'אחל/י לה יום הולדת שמח'}));
-                }
+                $.each($('#birthdayToday .personWrapper'), function (key, value) {
+
+                    let closest = $('<p>',{
+                        class: 'closestBirth',
+                    }).insertAfter($('.spinnerWrapper'));
+
+                    let closestSpanName = $('<span>',{
+                        class: 'birthdayColor',
+                        text: birthdayArr[key].nameHeb
+                    }).appendTo(closest);
+ 
+                    let closestSpan = $('<span>',{
+                        class: 'closestSpan',
+                        text: ' חוגג היום!'
+                    }).appendTo(closest);
+
+                    let birthdayWish = $('<p>', {
+                        class: 'birthdayWish'
+                    }).insertAfter(closest);
+
+                    if ($(value).attr('facebook') !== 'null') {
+                        let facebookTest = $('<a>', {
+                            href: 'https://www.facebook.com' + $(value).attr('facebook'),
+                            target: '_blank',
+                            text: 'אחל/י לו יום הולדת שמח'
+                        }).appendTo(birthdayWish);
+                    }
+
+                    $(value).click(function() {
+                        goToBirthdayPerson($(value).attr('numid'));
+                    })
+
+                    if (birthdayArr[key].gender == 1) {
+                        $(closestSpanName).css('color', 'lightblue');
+                    } else {
+                        $(closestSpanName).css('color', 'pink');
+                    }
+                });
                 
             } else {
-                $('#closestBirth').html('החוגג הקרוב: ' + "<span id='birthdayColor'>" + birthdayArr[0].nameHeb + "</span>");
+
+                let closest = $('<p>',{
+                    class: 'closestBirth',
+                    text: 'החוגג הקרוב: '
+                }).insertAfter($('.spinnerWrapper'));
+
+                let closestSpan = $('<span>', {
+                    class: 'birthdayColor',
+                    text: birthdayArr[0].nameHeb
+                }).appendTo(closest);
+
+                if (birthdayArr[0].gender == 1) {
+                    $('.birthdayColor').css('color', 'lightblue');
+                } else {
+                    $('.birthdayColor').css('color', 'pink');
+                }
+
                 if ($(window).width() > 765) {
-                    $('#closestBirth').mouseenter(function () {
+                    $('.closestBirth').mouseenter(function () {
                         if (!$('#searchResults').is(':visible')) {
                             let hoverImgContainer = $('<div>', {
                                 class: 'hoverImgContainer',
-                            }).hide().appendTo($('#closestBirth')).fadeIn();
+                            }).hide().appendTo($('.closestBirth')).fadeIn();
                             
                             let hoverImgWrapper = $('<div>', {
                                 class: 'hoverImgWrapper',
@@ -698,24 +809,17 @@ function checkClosest() {
                         }
                     });
                  
-                    $('#closestBirth').mouseleave(function () {
+                    $('.closestBirth').mouseleave(function () {
                         $('.hoverImgContainer').fadeOut(400);
-                        $('#closestBirth').css('pointer-events', 'none');
+                        $('.closestBirth').css('pointer-events', 'none');
                         setTimeout(function() {
                             $('.hoverImgContainer').remove();
-                            $('#closestBirth').css('pointer-events', 'all');
+                            $('.closestBirth').css('pointer-events', 'all');
                         }, 600);
                     }).mouseleave()
                 }
             }
         }
-
-        if (birthdayArr[0].gender == 1) {
-            $('#birthdayColor').css('color', 'lightblue');
-        } else {
-            $('#birthdayColor').css('color', 'pink');
-        }
-
     }, 1000);
 }
 
@@ -739,7 +843,7 @@ function buildCloths(param, img, alt, wrapper) {
     var param = $('<img>', {
         class: 'clothesImg',
         id: img,
-        src: './images/' + img + '.png',
+        src: './images/' + img + '.webp',
         alt: alt
     }).appendTo(wrapper);
 }
@@ -931,8 +1035,8 @@ function sortFriends(elem1, kind) {
                 $('.groupSortBtn').css('pointer-events', 'all');
                 break;
             case 3:
-                $('#closestBirth').html('');
-                $('#BirthdayWish').html('');
+                $('.closestBirth').html('');
+                $('.birthdayWish').html('');
                 if (birthdayToday) {
                     $('.personWrapper').first().remove();
                 }
