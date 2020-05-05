@@ -386,11 +386,11 @@ p {
     text-align: center;
 }
 
-#closestBirth, #BirthdayWish {
+.closestBirth, .birthdayWish, #BirthdayWish {
     font-size: 1.5rem;
 }
 
-#birthdayColor {
+.birthdayColor {
     text-shadow: 1px 1px 6px black;
 }
 
@@ -408,7 +408,7 @@ p {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: url(../images/thought.png) center center no-repeat;
+    background: url(../images/thought.webp) center center no-repeat;
     background-size: 15rem 15rem;
     width: 17rem;
     height: 20rem;
@@ -498,12 +498,12 @@ p {
 }
 
 .boyBornToday {
-    background: lightblue url(../images/fireworks.png) no-repeat center center;
+    background: lightblue url(../images/fireworks.webp) no-repeat center center;
     background-size: 100% 100%;
 }
 
 .girlBornToday {
-    background: pink url(../images/fireworks.png) no-repeat center center;
+    background: pink url(../images/fireworks.webp) no-repeat center center;
     background-size: 100% 100%;
 }
 
@@ -695,7 +695,7 @@ p {
     position: absolute;
     width:25px;
     height:25px;
-    background:url(../images/closeBtn.png) no-repeat top center;
+    background:url(../images/closeBtn.webp) no-repeat top center;
     background-Size:100% auto;
     top: 1em;
     right: 1em;
