@@ -1,4 +1,6 @@
 function changeToHeb() {
+    $('#birthdayToday').empty();
+    $('.closestBirth, .birthdayWish').remove();
 
     lang = 2;
     $('#langBtnHe').css('pointer-events', 'none');
@@ -31,6 +33,9 @@ function changeToHeb() {
 }
 
 function changeToEng() {
+    $('#birthdayToday').empty();
+    $('.closestBirth, .birthdayWish').remove();
+    
     lang = 1;
     $('#langBtnEn').css('pointer-events', 'none');
     $('#langBtnHe').css('pointer-events', 'all');
