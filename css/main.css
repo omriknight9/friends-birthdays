@@ -448,7 +448,7 @@ p {
 
 .parentDiv {
     width: 100%;
-    display: none;
+    display: flex;
     box-sizing: border-box;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -734,6 +734,17 @@ p {
     position: absolute;
     top: 7rem;
     left: 0;
+    color: white;
+    text-shadow: 1px 1px 6px black;
+    z-index: 3;
+    font-size: 1.2rem;
+}
+
+.hebBirthday {
+    margin: 0;
+    position: absolute;
+    left: 0;
+    top: 4rem;
     color: white;
     text-shadow: 1px 1px 6px black;
     z-index: 3;
