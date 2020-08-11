@@ -281,6 +281,7 @@ function buildPeople(div, wrapper, arr) {
             'instagram': people[i].instagram,
             'calendar': calendar,
             'year': yearToShow,
+            'afterSunset': people[i].afterSunset,
             click: function () {
 
                 if ($(this).attr('facebook') == 'null') {
@@ -320,13 +321,27 @@ function buildPeople(div, wrapper, arr) {
 
                 $('.hebBirthday').html('');
 
-                $.get(hebCalendarUrl + `&gy=${$(this).attr('year')}&gm=${$(this).attr('month')}&gd=${$(this).attr('day')}&2h=1`, function (data) {
-                    $('.hebBirthday').html(data.hebrew);
-                });
 
-                $.get(hebCalendarUrl + `&gy=${$(this).attr('year')}&gm=${$(this).attr('month')}&gd=${$(this).attr('day')}&2h=1&gs=on`, function (data) {
-                    $('.hebBirthday').append('/' + data.hebrew);
-                });
+                switch($(this).attr('afterSunset')) {
+                    case 'true':
+                        $.get(hebCalendarUrl + `&gy=${$(this).attr('year')}&gm=${$(this).attr('month')}&gd=${$(this).attr('day')}&2h=1&gs=on`, function (data) {
+                            $('.hebBirthday').html(data.hebrew);
+                        });
+                        break;
+                    case 'false':
+                        $.get(hebCalendarUrl + `&gy=${$(this).attr('year')}&gm=${$(this).attr('month')}&gd=${$(this).attr('day')}&2h=1`, function (data) {
+                            $('.hebBirthday').html(data.hebrew);
+                        });
+                        break;
+                    case 'null':
+                        $.get(hebCalendarUrl + `&gy=${$(this).attr('year')}&gm=${$(this).attr('month')}&gd=${$(this).attr('day')}&2h=1`, function (data) {
+                            $('.hebBirthday').html(data.hebrew);
+                        });
+                        $.get(hebCalendarUrl + `&gy=${$(this).attr('year')}&gm=${$(this).attr('month')}&gd=${$(this).attr('day')}&2h=1&gs=on`, function (data) {
+                            $('.hebBirthday').append('/' + data.hebrew);
+                        });
+                        break;
+                }
 
                 $('#personDetails').fadeIn(150);
 
