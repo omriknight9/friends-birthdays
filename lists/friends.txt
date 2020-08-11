@@ -1,26 +1,26 @@
 
 {
     "friends" : [
-	{"id": 1, "name": "Omri", "nameHeb": "עמרי", "birthday":"10/31/1990",  "image": "/omri.jpg", "facebook": "/omri.shalev.31", "instagram": "/omri_shalev9",  "group": 1.1, "gender": 1, "parent": 1, "married": 1},
-	{"id": 2,  "name": "Ester", "nameHeb": "אסתר", "birthday": "08/01/1991", "image": "/ester.jpg", "facebook": "/ester.alayev", "instagram": "/esteralayev", "group": 1.2, "gender": 2, "parent": 1, "married": 1},
-	{"id": 3,  "name": "Emma", "nameHeb": "אמה", "birthday": "04/03/2020", "image": "/emma.jpeg", "facebook": "null", "instagram": "null", "group": 1.3, "gender": 2, "parent": 0, "married": 0},
-	{"id": 4,  "name": "Tom", "nameHeb": "תום", "birthday": "07/31/1990", "image": "/tom.jpg", "facebook": "/tom.mendelson", "instagram": "/tomendelson", "group": 2.1, "gender": 1, "parent": 1, "married": 1},
-	{"id": 6, "name": "Chen", "nameHeb": "חן", "birthday": "06/19/1990", "image": "/chen.jpg", "facebook": "/chen.moutner", "instagram": "/chenmendelson2", "group": 2.2,  "gender": 2, "parent": 1, "married": 1},
-                     {"id": 5,  "name": "Lia", "nameHeb": "ליה", "birthday": "03/14/2020", "image": "/lia.jpg", "facebook": "null", "instagram": "null", "group": 2.3, "gender": 2, "parent": 0, "married": 0},
-	{"id": 7,  "name": "Idan", "nameHeb": "עידן", "birthday": "08/15/1990", "image": "/idan.jpg", "facebook": "/idan.poor", "instagram": "/idanpur", "group": 3.1,  "gender": 1, "parent": 1, "married": 1},
-	{"id": 8,  "name": "Amit", "nameHeb": "עמית", "birthday": "03/01/1992", "image": "/amit.jpg", "facebook": "/amit.wagner.16", "instagram": "/amitwagnerpur", "group": 3.2,  "gender": 2, "parent": 1, "married": 1},
-                     {"id": 9,  "name": "Gaya", "nameHeb": "גאיה", "birthday": "06/27/2020", "image": "/gaya.jpeg", "facebook": "null", "instagram": "null", "group": 3.3,  "gender": 2, "parent": 0, "married": 0},
-	{"id": 10,  "name": "Gil", "nameHeb": "גיל", "birthday": "07/25/1990", "image": "/gil.jpg", "facebook": "/gil.tencer", "instagram": "/giltencer", "group": 4.1,  "gender": 1, "parent": 0, "married": 1},
-	{"id": 11,  "name": "Gili", "nameHeb": "גילי", "birthday": "09/08/1993", "image": "/gili.jpg", "facebook": "/gilied", "instagram": "/gilieden", "group": 4.2,  "gender": 2, "parent": 0, "married": 1},
-	{"id": 12,  "name": "Omer", "nameHeb": "עומר", "birthday": "08/10/1990", "image": "/omer.jpg", "facebook": "/omer.shaarbani", "instagram": "/shaarbani", "group": 5.1,  "gender": 1, "parent": 0, "married": 0},
-	{"id": 13,  "name": "Or", "nameHeb": "אור", "birthday": "04/27/1990", "image": "/or.jpg", "facebook": "/or.gorfinkel", "instagram": "null", "group": 6.1,  "gender": 1, "parent": 0, "married": 0},
-	{"id": 14,  "name": "Matan", "nameHeb": "מתן", "birthday": "10/23/1990", "image": "/matan.jpg", "facebook": "/matan.pessah", "instagram": "/matanpessach", "group": 7.1,  "gender": 1, "parent": 0, "married": 0},
-	{"id": 15,  "name": "Ziv", "nameHeb": "זיו", "birthday": "03/05/1990", "image": "/ziv.jpg", "facebook": "/zfoox", "instagram": "/zivfoox", "group": 8.1,  "gender": 1, "parent": 0, "married": 0},
-	{"id": 16,  "name": "Gal", "nameHeb": "גל", "birthday": "12/28/1993", "image": "/gal.jpg", "facebook": "/Gal.Mendelson", "instagram": "null", "group": 9.1,  "gender": 1, "parent": 0, "married": 0},
-	{"id": 17,  "name": "Kim", "nameHeb": "קים", "birthday": "11/27/1990", "image": "/kim.jpg", "facebook": "/kim.vain.1", "instagram": "/kim_wain", "group": 10.1,  "gender": 1, "parent": 0, "married": 0},
-	{"id": 18,  "name": "Ben", "nameHeb": "בן", "birthday": "11/27/1990", "image": "/ben.jpg", "facebook": "/ben.vaindling", "instagram": "/benvini8", "group": 11.1,  "gender": 1, "parent": 0, "married": 0},
-	{"id": 19,  "name": "Idan", "nameHeb": "עידן", "birthday": "07/06/1990", "image": "/idanNiazov.jpg", "facebook": "/idan.niazov", "instagram": "/idan_niazov", "group": 12.1,  "gender": 1, "parent": 0, "married": 0},
-	{"id": 20,  "name": "David", "nameHeb": "דוד", "birthday": "05/05/1990", "image": "/david.jpg", "facebook": "/david.istakrov", "instagram": "/davidistahrov", "group": 13.1,  "gender": 1, "parent": 0, "married": 0}
+	{"id": 1, "name": "Omri", "nameHeb": "עמרי", "birthday":"10/31/1990",  "image": "/omri.jpg", "facebook": "/omri.shalev.31", "instagram": "/omri_shalev9",  "group": 1.1, "afterSunset": "true", "gender": 1, "parent": 1, "married": 1},
+	{"id": 2,  "name": "Ester", "nameHeb": "אסתר", "birthday": "08/01/1991", "image": "/ester.jpg", "facebook": "/ester.alayev", "instagram": "/esteralayev", "group": 1.2, "afterSunset": "false", "gender": 2, "parent": 1, "married": 1},
+	{"id": 3,  "name": "Emma", "nameHeb": "אמה", "birthday": "04/03/2020", "image": "/emma.jpeg", "facebook": "null", "instagram": "null", "group": 1.3, "afterSunset": "false", "gender": 2, "parent": 0, "married": 0},
+	{"id": 4,  "name": "Tom", "nameHeb": "תום", "birthday": "07/31/1990", "image": "/tom.jpg", "facebook": "/tom.mendelson", "instagram": "/tomendelson", "group": 2.1, "afterSunset": "null", "gender": 1, "parent": 1, "married": 1},
+	{"id": 6, "name": "Chen", "nameHeb": "חן", "birthday": "06/19/1990", "image": "/chen.jpg", "facebook": "/chen.moutner", "instagram": "/chenmendelson2", "group": 2.2, "afterSunset": "null", "gender": 2, "parent": 1, "married": 1},
+                     {"id": 5,  "name": "Lia", "nameHeb": "ליה", "birthday": "03/14/2020", "image": "/lia.jpg", "facebook": "null", "instagram": "null", "group": 2.3, "afterSunset": "null", "gender": 2, "parent": 0, "married": 0},
+	{"id": 7,  "name": "Idan", "nameHeb": "עידן", "birthday": "08/15/1990", "image": "/idan.jpg", "facebook": "/idan.poor", "instagram": "/idanpur", "group": 3.1, "afterSunset": "null", "gender": 1, "parent": 1, "married": 1},
+	{"id": 8,  "name": "Amit", "nameHeb": "עמית", "birthday": "03/01/1992", "image": "/amit.jpg", "facebook": "/amit.wagner.16", "instagram": "/amitwagnerpur", "group": 3.2, "afterSunset": "null", "gender": 2, "parent": 1, "married": 1},
+                     {"id": 9,  "name": "Gaya", "nameHeb": "גאיה", "birthday": "06/27/2020", "image": "/gaya.jpeg", "facebook": "null", "instagram": "null", "group": 3.3, "afterSunset": "null", "gender": 2, "parent": 0, "married": 0},
+	{"id": 10,  "name": "Gil", "nameHeb": "גיל", "birthday": "07/25/1990", "image": "/gil.jpg", "facebook": "/gil.tencer", "instagram": "/giltencer", "group": 4.1, "afterSunset": "null", "gender": 1, "parent": 0, "married": 1},
+	{"id": 11,  "name": "Gili", "nameHeb": "גילי", "birthday": "09/08/1993", "image": "/gili.jpg", "facebook": "/gilied", "instagram": "/gilieden", "group": 4.2, "afterSunset": "null", "gender": 2, "parent": 0, "married": 1},
+	{"id": 12,  "name": "Omer", "nameHeb": "עומר", "birthday": "08/10/1990", "image": "/omer.jpg", "facebook": "/omer.shaarbani", "instagram": "/shaarbani", "afterSunset": "null", "group": 5.1,  "gender": 1, "parent": 0, "married": 0},
+	{"id": 13,  "name": "Or", "nameHeb": "אור", "birthday": "04/27/1990", "image": "/or.jpg", "facebook": "/or.gorfinkel", "instagram": "null", "group": 6.1, "afterSunset": "null", "gender": 1, "parent": 0, "married": 0},
+	{"id": 14,  "name": "Matan", "nameHeb": "מתן", "birthday": "10/23/1990", "image": "/matan.jpg", "facebook": "/matan.pessah", "instagram": "/matanpessach", "group": 7.1, "afterSunset": "null", "gender": 1, "parent": 0, "married": 0},
+	{"id": 15,  "name": "Ziv", "nameHeb": "זיו", "birthday": "03/05/1990", "image": "/ziv.jpg", "facebook": "/zfoox", "instagram": "/zivfoox", "group": 8.1, "afterSunset": "null", "gender": 1, "parent": 0, "married": 0},
+	{"id": 16,  "name": "Gal", "nameHeb": "גל", "birthday": "12/28/1993", "image": "/gal.jpg", "facebook": "/Gal.Mendelson", "instagram": "null", "group": 9.1, "afterSunset": "null", "gender": 1, "parent": 0, "married": 0},
+	{"id": 17,  "name": "Kim", "nameHeb": "קים", "birthday": "11/27/1990", "image": "/kim.jpg", "facebook": "/kim.vain.1", "instagram": "/kim_wain", "group": 10.1, "afterSunset": "null", "gender": 1, "parent": 0, "married": 0},
+	{"id": 18,  "name": "Ben", "nameHeb": "בן", "birthday": "11/27/1990", "image": "/ben.jpg", "facebook": "/ben.vaindling", "instagram": "/benvini8", "group": 11.1, "afterSunset": "null", "gender": 1, "parent": 0, "married": 0},
+	{"id": 19,  "name": "Idan", "nameHeb": "עידן", "birthday": "07/06/1990", "image": "/idanNiazov.jpg", "facebook": "/idan.niazov", "instagram": "/idan_niazov", "group": 12.1, "afterSunset": "null", "gender": 1, "parent": 0, "married": 0},
+	{"id": 20,  "name": "David", "nameHeb": "דוד", "birthday": "05/05/1990", "image": "/david.jpg", "facebook": "/david.istakrov", "instagram": "/davidistahrov", "group": 13.1, "afterSunset": "null", "gender": 1, "parent": 0, "married": 0}
 	
     ]
 }
