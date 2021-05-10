@@ -321,7 +321,6 @@ function buildPeople(div, wrapper, arr) {
 
                 $('.hebBirthday').html('');
 
-
                 switch($(this).attr('afterSunset')) {
                     case 'true':
                         $.get(hebCalendarUrl + `&gy=${$(this).attr('year')}&gm=${$(this).attr('month')}&gd=${$(this).attr('day')}&2h=1&gs=on`, function (data) {
@@ -747,11 +746,23 @@ function checkClosest() {
                         class: 'birthdayColor',
                         text: birthdayArr[key].nameHeb
                     }).appendTo(closest);
- 
+
+                    let celebrateText;
+                    let wishText;
+
+                    if ($(value).attr('gender') == 1) {
+                        celebrateText = ' חוגג היום!';
+                        wishText = 'אחל/י לו יום הולדת שמח';
+                    } else {
+                        celebrateText = ' חוגגת היום!';
+                        wishText = 'אחל/י לה יום הולדת שמח';
+                    }
+                    
                     let closestSpan = $('<span>',{
                         class: 'closestSpan',
-                        text: ' חוגג היום!'
+                        text: celebrateText
                     }).appendTo(closest);
+
 
                     let birthdayWish = $('<p>', {
                         class: 'birthdayWish'
@@ -761,7 +772,7 @@ function checkClosest() {
                         let facebookTest = $('<a>', {
                             href: 'https://www.facebook.com' + $(value).attr('facebook'),
                             target: '_blank',
-                            text: 'אחל/י לו יום הולדת שמח'
+                            text: wishText
                         }).appendTo(birthdayWish);
                     }
 
