@@ -144,12 +144,12 @@ function showResult(that, resultNum) {
                 class: 'resultImgWrapper',
             }).appendTo(result);
 
-            let resultImg = $('<img>', {
+            $('<img>', {
                 class: 'resultImg',
                 src: './images/people' + personImg
             }).appendTo(resultImgWrapper);
 
-            let resultName = $('<p>', {
+            $('<p>', {
                 class: 'resultName',
                 text: cap
             }).appendTo(result);
@@ -205,14 +205,14 @@ function goToDiv(div) {
 
 function buildPeople(div, wrapper, arr) {
 
-    var people = arr[0].friends;
-    var date = new Date();
-    var year = date.getFullYear();
-    var birthday;
+    let people = arr[0].friends;
+    let date = new Date();
+    let year = date.getFullYear();
+    let birthday;
 
-    for (var i = 0; i < people.length; i++) {
-        var groupStr = JSON.stringify(people[i].group);
-        var group = groupStr.substring(0, groupStr.indexOf('.'));
+    for (let i = 0; i < people.length; i++) {
+        let groupStr = JSON.stringify(people[i].group);
+        let group = groupStr.substring(0, groupStr.indexOf('.'));
 
         var groupWrapper;
 
@@ -234,7 +234,7 @@ function buildPeople(div, wrapper, arr) {
             }
         }
 
-        var nameToShow;
+        let nameToShow;
 
         if (lang == 1) {
             nameToShow = people[i].name;
@@ -242,14 +242,14 @@ function buildPeople(div, wrapper, arr) {
             nameToShow = people[i].nameHeb;
         }
 
-        var dateNow = new Date();
-        var monthNow = dateNow.getMonth() + 1;
-        var yearNow = dateNow.getFullYear();
+        let dateNow = new Date();
+        // let monthNow = dateNow.getMonth() + 1;
+        let yearNow = dateNow.getFullYear();
 
-        var date = new Date(people[i].birthday);
-        var day = date.getDate();
-        var month = date.getMonth() + 1;
-        var yearToShow = date.getFullYear();
+        let date = new Date(people[i].birthday);
+        let day = date.getDate();
+        let month = date.getMonth() + 1;
+        let yearToShow = date.getFullYear();
 
         if (day < 10) {
             day = '0' + day
@@ -263,10 +263,10 @@ function buildPeople(div, wrapper, arr) {
             month = month;
         }
 
-        var calendar = month + '/' + day;
-        var dateForShow = day + '/' + month + '/' + yearToShow;
+        let calendar = month + '/' + day;
+        let dateForShow = day + '/' + month + '/' + yearToShow;
 
-        var personWrapper = $('<div>', {
+        let personWrapper = $('<div>', {
             class: 'personWrapper',
             'numId': people[i].id,
             'birthday': people[i].birthday,
@@ -403,7 +403,7 @@ function buildPeople(div, wrapper, arr) {
             birthday = 'יומולדת: '
         }
 
-        var genderImg = $('<img>', {
+        $('<img>', {
             class: 'genderImg',
             src: './images/' + gender,
             alt: 'gender img'
@@ -498,13 +498,13 @@ function buildPeople(div, wrapper, arr) {
                 break;
         }
 
-        var zodiacImg = $('<img>', {
+        $('<img>', {
             class: 'zodiacImg',
             src: './images/zodiac' + zodiac,
             alt: 'zodiac img'
         }).appendTo(personWrapper);
 
-        var age = yearNow - yearToShow;
+        let age = yearNow - yearToShow;
 
         if ($(personWrapper).attr('isParent') == 1) {
             $(personWrapper).appendTo(parentDiv);
@@ -540,7 +540,7 @@ function buildPeople(div, wrapper, arr) {
             $(personWrapper).appendTo(groupWrapper);
         }
 
-        var selectedDate = new Date($(personWrapper).attr('calendar') + '/' + year);
+        let selectedDate = new Date($(personWrapper).attr('calendar') + '/' + year);
 
         if (selectedDate < now) {
             $(personWrapper).attr('calendar', $(personWrapper).attr('calendar') + '/' + Number(year + 1));
@@ -548,25 +548,25 @@ function buildPeople(div, wrapper, arr) {
             $(personWrapper).attr('calendar', $(personWrapper).attr('calendar') + '/' + year);
         }
         
-        var personDetailsWrapper = $('<div>', {
+        let personDetailsWrapper = $('<div>', {
             class: 'personDetailsWrapper',
         }).appendTo(personWrapper);
 
-        var personName = $('<p>', {
+        $('<p>', {
             class: 'personName',
             text: nameToShow
         }).appendTo(personDetailsWrapper);
 
-        var personBirthday = $('<p>', {
+        $('<p>', {
             class: 'personBirthday',
             text: birthday + dateForShow
         }).appendTo(personDetailsWrapper);
 
-        var personImgWrapper = $('<div>', {
+        let personImgWrapper = $('<div>', {
             class: 'personImgWrapper',
         }).appendTo(personWrapper);
 
-        var personImg = $('<img>', {
+        $('<img>', {
             class: 'personImg',
             alt: 'personImg',
             src: './images/people' + people[i].image
@@ -603,14 +603,14 @@ function checkClosest() {
             year = now.getFullYear();
         }
         
-        var finalDate = new Date(year + '/' + birthdayMonth + '/' + birthdayDay);
+        let finalDate = new Date(year + '/' + birthdayMonth + '/' + birthdayDay);
         birthdayArr.push({name: name, gender: gender, nameHeb: nameHeb, date: finalDate, img: img});  
     }
 
     setTimeout(function() {
         birthdayArr.sort(function(a, b) {
-            var distancea = Math.abs(now - a.date);
-            var distanceb = Math.abs(now - b.date);
+            let distancea = Math.abs(now - a.date);
+            let distanceb = Math.abs(now - b.date);
             return distancea - distanceb;
         });
 
@@ -641,7 +641,7 @@ function checkClosest() {
                         text: birthdayArr[key].name
                     }).appendTo(closest);
                  
-                    let closestSpan = $('<span>',{
+                    $('<span>',{
                         class: 'closestSpan',
                         text: "'s" + " Birthday Today!"
                     }).appendTo(closest);
@@ -658,7 +658,7 @@ function checkClosest() {
                             birthdayText = 'Wish Her Happy Birthday';
                         }
 
-                        let facebookTest = $('<a>', {
+                        $('<a>', {
                             href: 'https://www.facebook.com' + $(value).attr('facebook'),
                             target: '_blank',
                             text: birthdayText
@@ -683,7 +683,7 @@ function checkClosest() {
                     text: 'Closest Birthday: '
                 }).insertAfter($('.spinnerWrapper'));
 
-                let closestSpan = $('<span>', {
+                $('<span>', {
                     class: 'birthdayColor',
                     text: birthdayArr[0].name
                 }).appendTo(closest);
@@ -705,7 +705,7 @@ function checkClosest() {
                                 class: 'hoverImgWrapper',
                             }).appendTo(hoverImgContainer);
             
-                            let hoverImg = $('<img>', {
+                            $('<img>', {
                                 class: 'hoverImg',
                                 src: './images/people' + birthdayArr[0].img
                             }).appendTo(hoverImgWrapper)
@@ -758,7 +758,7 @@ function checkClosest() {
                         wishText = 'אחל/י לה יום הולדת שמח';
                     }
                     
-                    let closestSpan = $('<span>',{
+                    $('<span>',{
                         class: 'closestSpan',
                         text: celebrateText
                     }).appendTo(closest);
@@ -769,7 +769,7 @@ function checkClosest() {
                     }).insertAfter(closest);
 
                     if ($(value).attr('facebook') !== 'null') {
-                        let facebookTest = $('<a>', {
+                        $('<a>', {
                             href: 'https://www.facebook.com' + $(value).attr('facebook'),
                             target: '_blank',
                             text: wishText
@@ -794,7 +794,7 @@ function checkClosest() {
                     text: 'החוגג הקרוב: '
                 }).insertAfter($('.spinnerWrapper'));
 
-                let closestSpan = $('<span>', {
+                $('<span>', {
                     class: 'birthdayColor',
                     text: birthdayArr[0].nameHeb
                 }).appendTo(closest);
@@ -816,7 +816,7 @@ function checkClosest() {
                                 class: 'hoverImgWrapper',
                             }).appendTo(hoverImgContainer);
             
-                            let hoverImg = $('<img>', {
+                            $('<img>', {
                                 class: 'hoverImg',
                                 src: './images/people' + birthdayArr[0].img
                             }).appendTo(hoverImgWrapper)
@@ -854,27 +854,26 @@ function checkAge() {
 
 function buildCloths(param, img, alt, wrapper) {
     
-    var param = $('<img>', {
+    $('<img>', {
         class: 'clothesImg ' + img,
-        // id: img,
         src: './images/' + img + '.webp',
         alt: alt
     }).appendTo(wrapper);
 }
 
 function getAge(div, dateString, calendar) {
-    var today = new Date();
-    var birthDate = new Date(dateString);
-    var calendarBirthday = new Date(calendar);
-    var age = today.getFullYear() - birthDate.getFullYear();
-    var m = today.getMonth() - birthDate.getMonth();
-    var ageText;
+    let today = new Date();
+    let birthDate = new Date(dateString);
+    let calendarBirthday = new Date(calendar);
+    let age = today.getFullYear() - birthDate.getFullYear();
+    let m = today.getMonth() - birthDate.getMonth();
+    let ageText;
 
-    var month = calendarBirthday.getMonth() + 1;
-    var day = calendarBirthday.getDate();
+    let month = calendarBirthday.getMonth() + 1;
+    let day = calendarBirthday.getDate();
 
-    var daysEng = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-    var daysHeb = ["ראשון", "שני", "שלישי", "רביעי", "חמישי", "שישי", "שבת"];
+    let daysEng = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    let daysHeb = ["ראשון", "שני", "שלישי", "רביעי", "חמישי", "שישי", "שבת"];
 
     if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
         if (lang == 1) {
@@ -934,7 +933,7 @@ function getAge(div, dateString, calendar) {
         ageText = 'גיל: ';
     }
 
-    var personAge = $('<p>', {
+    $('<p>', {
         class: 'personAge',
         text: ageText + age
     }).appendTo($(div).find($('.personDetailsWrapper')));
@@ -983,12 +982,12 @@ function sortFriends(elem1, kind) {
     }
 
     $.each($('.container'), function (key, value) {
-        var ids = [], obj, i, len;
-        var children = $(this).find('.personWrapper');
+        let ids = [], obj, i, len;
+        let children = $(this).find('.personWrapper');
         for (i = 0, len = children.length; i < len; i++) {
             obj = {};
             obj.element = children[i];
-            var elem2 = $(children[i]).attr(elem1);
+            let elem2 = $(children[i]).attr(elem1);
             switch (kind) {
                 case 1:
                     obj.idNum = new Date(elem2);
