@@ -2,14 +2,11 @@
 let friends = [];
 let counter = 1;
 let lang = 1;
-
 let now = new Date();
 let currentYear = now.getFullYear();
 let sortBtnCounter = 1;
-
 let birthdayArr = [];
 let birthdayToday = false;
-
 let searchVal;
 let lastChar;
 
@@ -87,7 +84,6 @@ function showResult(that, resultNum) {
         let personImg = $($(that)[i]).attr('img');
         let searchVal = $('#search').val();
         let searchValCapitalized = searchVal.charAt(0).toUpperCase() + searchVal.slice(1);
-
         let cap;
         let serachFinal;
 
@@ -114,11 +110,9 @@ function showResult(that, resultNum) {
                 class: 'result',
                 id: resultNum,
                 click: function() {
-
                     let that = this;
                     let pickedId = $(that).attr('id');
                     $.each($('.container .personWrapper'), function (key, value) {
-
                         if ($(this).attr('numId') == pickedId) {
                             $('body').css('pointer-events', 'none');
                             let selectedDiv = this;
@@ -193,7 +187,6 @@ function loadJson(textFile) {
         friends.push(JSON.parse(data));
         setTimeout(function () {
             buildPeople('friendsWrapper', $('.container'), friends);
-            // $('body').css('background-color', '#3fe09b');
             $('body').css('background-image', 'linear-gradient(180deg,rgba(200, 200, 200, .95), rgba(50,50,50,.95))');
         }, 500);
     });
@@ -204,7 +197,6 @@ function goToDiv(div) {
 }
 
 function buildPeople(div, wrapper, arr) {
-
     let people = arr[0].friends;
     let date = new Date();
     let year = date.getFullYear();
@@ -243,9 +235,7 @@ function buildPeople(div, wrapper, arr) {
         }
 
         let dateNow = new Date();
-        // let monthNow = dateNow.getMonth() + 1;
         let yearNow = dateNow.getFullYear();
-
         let date = new Date(people[i].birthday);
         let day = date.getDate();
         let month = date.getMonth() + 1;
@@ -283,7 +273,6 @@ function buildPeople(div, wrapper, arr) {
             'year': yearToShow,
             'afterSunset': people[i].afterSunset,
             click: function () {
-
                 if ($(this).attr('facebook') == 'null') {
                     $('#facebookLink').hide();
                 } else {
@@ -375,7 +364,6 @@ function buildPeople(div, wrapper, arr) {
             if (newDay == now.getDate() && (now.getMonth() + 1) == newMonth) {
                 $(personWrapper).addClass('boyBornToday');
             }
-
         } else {
             gender = 'female.webp';
             $(personWrapper).addClass('girl');
@@ -514,7 +502,6 @@ function buildPeople(div, wrapper, arr) {
             } else {
                 buildCloths('dressImg', 'dress', 'dress img', personWrapper);
             }
-
         } else {
             if ($(personWrapper).attr('gender') == 1) {
                 if (age < 5) {
@@ -629,11 +616,9 @@ function checkClosest() {
                 });
 
                 $.each($('#birthdayToday .personWrapper'), function (key, value) {
-
                     let closest = $('<p>',{
                         class: 'closestBirth',
                         text: "It's "
-
                     }).insertAfter($('.spinnerWrapper'));
 
                     let closestSpanName = $('<span>',{
@@ -674,10 +659,8 @@ function checkClosest() {
                     } else {
                         $(closestSpanName).css('color', 'pink');
                     }
-                });
-                
+                });  
             } else {
-
                 let closest = $('<p>',{
                     class: 'closestBirth',
                     text: 'Closest Birthday: '
@@ -722,7 +705,6 @@ function checkClosest() {
                     }).mouseleave()
                 }
             }
-
         } else {
             if (birthdayToday) {
                 $.each($('.personWrapper'), function (key, value) {
@@ -737,7 +719,6 @@ function checkClosest() {
                 });
 
                 $.each($('#birthdayToday .personWrapper'), function (key, value) {
-
                     let closest = $('<p>',{
                         class: 'closestBirth',
                     }).insertAfter($('.spinnerWrapper'));
@@ -785,10 +766,8 @@ function checkClosest() {
                     } else {
                         $(closestSpanName).css('color', 'pink');
                     }
-                });
-                
+                });       
             } else {
-
                 let closest = $('<p>',{
                     class: 'closestBirth',
                     text: 'החוגג הקרוב: '
@@ -838,7 +817,6 @@ function checkClosest() {
 }
 
 function goToBirthdayPerson(id) {
-    
     $.each($('.container .personWrapper'), function (key, value) {
         if ($(value).attr('numId') == id) {
             $(value).click();
@@ -853,7 +831,6 @@ function checkAge() {
 }
 
 function buildCloths(param, img, alt, wrapper) {
-    
     $('<img>', {
         class: 'clothesImg ' + img,
         src: './images/' + img + '.webp',
@@ -868,10 +845,8 @@ function getAge(div, dateString, calendar) {
     let age = today.getFullYear() - birthDate.getFullYear();
     let m = today.getMonth() - birthDate.getMonth();
     let ageText;
-
     let month = calendarBirthday.getMonth() + 1;
     let day = calendarBirthday.getDate();
-
     let daysEng = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
     let daysHeb = ["ראשון", "שני", "שלישי", "רביעי", "חמישי", "שישי", "שבת"];
 
@@ -883,6 +858,7 @@ function getAge(div, dateString, calendar) {
         }
         
         age--;
+
     } else {
         calendarBirthday.setFullYear(calendarBirthday.getFullYear());
         if (lang == 1) {
@@ -892,9 +868,7 @@ function getAge(div, dateString, calendar) {
         }
     }
 
-
     if (age == 0) {
-
         let finalAge;
         let finalMonth;
         let finalDay;
@@ -904,6 +878,7 @@ function getAge(div, dateString, calendar) {
         } else {
             finalMonth = today.getMonth() + 1;
         }
+
         if (today.getDate() < 10) {
             finalDay = '0' + Math.round(today.getDate());
         } else {
@@ -946,7 +921,6 @@ function goToTop() {
 }
 
 function scrollBtn() {
-
     if ($(this).scrollTop() > 550) {
         $('.goToTopBtn').fadeIn();
     }
@@ -956,7 +930,6 @@ function scrollBtn() {
 }
 
 function sortFriends(elem1, kind) {
-
     $('.groupWrapper').removeClass('oddGroup');
     $('.groupWrapper').removeClass('evenGroup');
 
@@ -965,7 +938,6 @@ function sortFriends(elem1, kind) {
     }
 
     else if ($('.btnWrapper').attr('kind') == kind) {
-
     }
 
     else {
@@ -1022,24 +994,13 @@ function sortFriends(elem1, kind) {
                     case 1:
                         ids.sort(function (a, b) {
                             return a.idNum.localeCompare(b.idNum);
-                            // if (a.idNum > b.idNum) {
-                            //     return 1;
-                            // } else {
-                            //     return -1;
-                            // }
                         });
-
                         counter = 2;
                         break;
 
                     case 2:
                         ids.sort(function (a, b) {
                             return b.idNum.localeCompare(a.idNum);
-                            // if (a.idNum < b.idNum) {
-                            //     return 1;
-                            // } else {
-                            //     return -1;
-                            // }
                         });
                         counter = 1;
                         break;
@@ -1076,7 +1037,6 @@ function sortFriends(elem1, kind) {
 }
 
 function removePopup(container) {
-
     $(document).mouseup(function (e) {
         if (container.is(e.target) && container.has(e.target).length === 0) {
             container.hide();
