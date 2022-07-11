@@ -76,7 +76,7 @@ $(document).ready(function (event) {
     })
 });
 
-function showResult(that, resultNum) {
+const showResult = (that, resultNum) => {
     for (let i = 0; i < $(that).length; i++) {
         let personName = $($(that)[i]).attr('name').toLowerCase();
         let personNameHeb = $($(that)[i]).attr('nameHeb');
@@ -157,7 +157,7 @@ function showResult(that, resultNum) {
     }
 }
 
-function showFriends() {
+const showFriends = () => {
     $('.container').empty();
     friends = [];
     counter = 1;
@@ -172,7 +172,7 @@ function showFriends() {
     sortBtnCounter = 1
 }
 
-function sort() {
+const sort = () => {
     if (sortBtnCounter == 1) {
         $('.sortContainer').fadeIn('fast');
         sortBtnCounter = 2;
@@ -182,21 +182,21 @@ function sort() {
     }
 }
 
-function loadJson(textFile) {
+const loadJson = (textFile) => {
     $.get(textFile, function (data) {
         friends.push(JSON.parse(data));
         setTimeout(function () {
-            buildPeople('friendsWrapper', $('.container'), friends);
+            buildPeople($('.container'), friends);
             $('body').css('background-image', 'linear-gradient(180deg,rgba(200, 200, 200, .95), rgba(50,50,50,.95))');
         }, 500);
     });
 }
 
-function goToDiv(div) {
+const goToDiv = (div) => {
     $('html, body').animate({ scrollTop: $(div).position().top -170 }, 1500);
 }
 
-function buildPeople(div, wrapper, arr) {
+const buildPeople = (wrapper, arr) => {
     let people = arr[0].friends;
     let date = new Date();
     let year = date.getFullYear();
@@ -346,7 +346,7 @@ function buildPeople(div, wrapper, arr) {
         let newMonth;
 
         if ($(personWrapper).attr('gender') == 1) {
-            gender = 'male.webp';
+            gender = 'male.png';
             $(personWrapper).addClass('boy');
 
             if (day.toString().charAt(0) == '0') {
@@ -365,7 +365,7 @@ function buildPeople(div, wrapper, arr) {
                 $(personWrapper).addClass('boyBornToday');
             }
         } else {
-            gender = 'female.webp';
+            gender = 'female.png';
             $(personWrapper).addClass('girl');
 
             if (day.toString().charAt(0) == '0') {
@@ -402,86 +402,86 @@ function buildPeople(div, wrapper, arr) {
         switch(month) {
             case '01': case 01:
                 if (day < 20) {
-                    zodiac = '/capricorn.webp';
+                    zodiac = '/capricorn.png';
                 } else {
-                    zodiac = '/aquarius.webp';
+                    zodiac = '/aquarius.png';
                 }
                 break;
             case '02': case 02:
                 if (day < 19) {
-                    zodiac = '/aquarius.webp';
+                    zodiac = '/aquarius.png';
                 } else {
-                    zodiac = '/pisces.webp';
+                    zodiac = '/pisces.png';
                 }
                 break;
             case '03': case 03:
                 if (day < 21) {
-                    zodiac = '/pisces.webp';
+                    zodiac = '/pisces.png';
                 } else {
-                    zodiac = '/aries.webp';
+                    zodiac = '/aries.png';
                 }
                 break;
             case '04': case 04:
                 if (day < 20) {
-                    zodiac = '/aries.webp';
+                    zodiac = '/aries.png';
                 } else {
-                    zodiac = '/taurus.webp';
+                    zodiac = '/taurus.png';
                 }
                 break;
             case '05': case 05:
                 if (day < 21) {
-                    zodiac = '/taurus.webp';
+                    zodiac = '/taurus.png';
                 } else {
-                    zodiac = '/gemini.webp';
+                    zodiac = '/gemini.png';
                 }
                 break;
             case '06': case 06:
                 if (day < 21) {
-                    zodiac = '/gemini.webp';
+                    zodiac = '/gemini.png';
                 } else {
-                    zodiac = '/cancer.webp';
+                    zodiac = '/cancer.png';
                 }
                 break;
             case '07': case 07:
                 if (day < 23) {
-                    zodiac = '/cancer.webp';
+                    zodiac = '/cancer.png';
                 } else {
-                    zodiac = '/leo.webp';
+                    zodiac = '/leo.png';
                 }
                 break;
             case '08': case 08:
                 if (day < 23) {
-                    zodiac = '/leo.webp';
+                    zodiac = '/leo.png';
                 } else {
-                    zodiac = '/virgo.webp';
+                    zodiac = '/virgo.png';
                 }
                 break;
             case '09': case 09:
                 if (day < 23) {
-                    zodiac = '/virgo.webp';
+                    zodiac = '/virgo.png';
                 } else {
-                    zodiac = '/libra.webp';
+                    zodiac = '/libra.png';
                 }
                 break;
             case '10': case 10:
                 if (day < 23) {
-                    zodiac = '/libra.webp';
+                    zodiac = '/libra.png';
                 } else {
-                    zodiac = '/scorpio.webp';
+                    zodiac = '/scorpio.png';
                 }
                 break;
             case '11': case 11:
                 if (day < 22) {
-                    zodiac = '/scorpio.webp';
+                    zodiac = '/scorpio.png';
                 } else {
-                    zodiac = '/sagittarius.webp';
+                    zodiac = '/sagittarius.png';
                 }
                 break;
             case '12': case 12:
                 if (day < 22) {
-                    zodiac = '/sagittarius.webp';
+                    zodiac = '/sagittarius.png';
                 } else {
-                    zodiac = '/capricorn.webp';
+                    zodiac = '/capricorn.png';
                 }
                 break;
         }
@@ -498,29 +498,29 @@ function buildPeople(div, wrapper, arr) {
             $(personWrapper).appendTo(parentDiv);
             if ($(personWrapper).attr('gender') == 1) {
                 $(personWrapper).addClass('suit');
-                buildCloths('suitImg', 'suit', 'suit img', personWrapper);
+                buildCloths('suit', 'suit img', personWrapper);
             } else {
-                buildCloths('dressImg', 'dress', 'dress img', personWrapper);
+                buildCloths('dress', 'dress img', personWrapper);
             }
         } else {
             if ($(personWrapper).attr('gender') == 1) {
                 if (age < 5) {
-                    buildCloths('babyBoyImg', 'babyBoy', 'baby boy img', personWrapper);
+                    buildCloths('babyBoy', 'baby boy img', personWrapper);
                 } else {
                     if ($(personWrapper).attr('married') == 1) {
-                        buildCloths('suitImg', 'suit', 'suit img', personWrapper);
+                        buildCloths('suit', 'suit img', personWrapper);
                     } else {
-                        buildCloths('boyImg', 'boy', 'boy img', personWrapper);
+                        buildCloths('boy', 'boy img', personWrapper);
                     }
                 }
             } else {
                 if (age < 5) {
-                    buildCloths('babyGirlImg', 'babyGirl', 'baby girl img', personWrapper);
+                    buildCloths('babyGirl', 'baby girl img', personWrapper);
                 } else {
                     if ($(personWrapper).attr('married') == 1) {
-                        buildCloths('dressImg', 'dress', 'dress img', personWrapper);
+                        buildCloths('dress', 'dress img', personWrapper);
                     } else {
-                        buildCloths('girlImg', 'girl', 'girl img', personWrapper);
+                        buildCloths('girl', 'girl img', personWrapper);
                     }
                 }
             }
@@ -568,7 +568,7 @@ function buildPeople(div, wrapper, arr) {
     }, 0);
 }
 
-function checkClosest() {
+const checkClosest = () => {
     let year;
     birthdayArr = [];
 
@@ -816,7 +816,7 @@ function checkClosest() {
     }, 1000);
 }
 
-function goToBirthdayPerson(id) {
+const goToBirthdayPerson = (id) => {
     $.each($('.container .personWrapper'), function (key, value) {
         if ($(value).attr('numId') == id) {
             $(value).click();
@@ -824,21 +824,21 @@ function goToBirthdayPerson(id) {
     });
 }
 
-function checkAge() {
+const checkAge = () => {
     $.each($('.personWrapper'), function (key, value) {
         getAge($(this), $(this).attr('birthday'), $(this).attr('calendar'));
     });
 }
 
-function buildCloths(param, img, alt, wrapper) {
+const buildCloths = (img, alt, wrapper) => {
     $('<img>', {
         class: 'clothesImg ' + img,
-        src: './images/' + img + '.webp',
+        src: './images/' + img + '.png',
         alt: alt
     }).appendTo(wrapper);
 }
 
-function getAge(div, dateString, calendar) {
+const getAge = (div, dateString, calendar) => {
     let today = new Date();
     let birthDate = new Date(dateString);
     let calendarBirthday = new Date(calendar);
@@ -916,20 +916,20 @@ function getAge(div, dateString, calendar) {
     return age;
 }
 
-function goToTop() {
+const goToTop = () => {
     $('html,body').animate({ scrollTop: 0 }, 'slow');
 }
 
 function scrollBtn() {
     if ($(this).scrollTop() > 550) {
-        $('.goToTopBtn').fadeIn();
+        $('#goToTopBtn').fadeIn();
     }
     else {
-        $('.goToTopBtn').fadeOut();
+        $('#goToTopBtn').fadeOut();
     }
 }
 
-function sortFriends(elem1, kind) {
+const sortFriends = (elem1, kind) => {
     $('.groupWrapper').removeClass('oddGroup');
     $('.groupWrapper').removeClass('evenGroup');
 
@@ -1036,7 +1036,7 @@ function sortFriends(elem1, kind) {
     sortBtnCounter = 1
 }
 
-function removePopup(container) {
+const removePopup = (container) => {
     $(document).mouseup(function (e) {
         if (container.is(e.target) && container.has(e.target).length === 0) {
             container.hide();
@@ -1046,15 +1046,14 @@ function removePopup(container) {
     })
 }
 
-function closeCurrentPopup(that) {
+const closeCurrentPopup = (that) => {
     $($(that)[0].parentElement.parentElement.parentElement).fadeOut(150);
 }
 
-function capitalize(str) {
+const capitalize = (str) => {
     str = str.split(' ');
     for (let i = 0; i < str.length; i++) {
         str[i] = str[i][0].toUpperCase() + str[i].substr(1);
     }
-
     return str.join(" ");
 }
