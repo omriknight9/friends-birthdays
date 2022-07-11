@@ -408,7 +408,7 @@ p {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: url(../images/thought.webp) center center no-repeat;
+    background: url(../images/thought.png) center center no-repeat;
     background-size: 15rem 15rem;
     width: 17rem;
     height: 20rem;
@@ -498,12 +498,12 @@ p {
 }
 
 .boyBornToday {
-    background: lightblue url(../images/fireworks.webp) no-repeat center center;
+    background: lightblue url(../images/fireworks.png) no-repeat center center;
     background-size: 100% 100%;
 }
 
 .girlBornToday {
-    background: pink url(../images/fireworks.webp) no-repeat center center;
+    background: pink url(../images/fireworks.png) no-repeat center center;
     background-size: 100% 100%;
 }
 
@@ -582,15 +582,15 @@ p {
     box-shadow: 0 1px 3px 3px #848484;
 }
 
-.goToTopBtn {
+#goToTopBtn {
     display: none;
-    width: 45px;
-    height: 45px;
     cursor: pointer;
     position: fixed;
-    bottom: 6rem;
-    right: 1.5rem;
-    z-index: 999;
+    bottom: 2rem;
+    right: 1rem;
+    z-index: 9999;
+    filter: drop-shadow(0 1px 4px rgba(0, 0, 0, 0.8));
+    fill: var(--orange);
 }
 
 #birthdayToday {
@@ -706,7 +706,7 @@ p {
     position: absolute;
     width:25px;
     height:25px;
-    background:url(../images/closeBtn.webp) no-repeat top center;
+    background:url(../images/closeBtn.png) no-repeat top center;
     background-Size:100% auto;
     top: 1em;
     right: 1em;
