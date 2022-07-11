@@ -7,15 +7,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2, minimum-scale=1, user-scalable=yes">
     <meta name="description" content="Friends Birthdays">
     <link rel="stylesheet" type="text/css" href="css/main.css">
-    <link rel="icon" href="images/birthdayCake.webp">
+    <link rel="icon" href="images/birthdayCake.png">
     <link href="https://fonts.googleapis.com/css?family=Kurale&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=David+Libre&display=swap" rel="stylesheet">
-    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
     <script type="text/javascript" src="js/translations.js"></script>
     <script type="text/javascript" src="js/addToCalendar.js"></script>
-
 </head>
 <body>
 
@@ -24,25 +22,23 @@
             <div class="header">
                 <h1>Friends Birthdays</h1>
                 <div class="imgWrapper">           
-                    <a href="javascript:void(0)"><img src="images/usFlag.webp" alt="us flag" id="langBtnEn" /></a>
-                    <a href="javascript:void(0)"><img src="images/israelFlag.webp" alt="israel flag" id="langBtnHe" /></a>
+                    <a href="javascript:void(0)"><img src="images/usFlag.png" alt="us flag" id="langBtnEn" /></a>
+                    <a href="javascript:void(0)"><img src="images/israelFlag.png" alt="israel flag" id="langBtnHe" /></a>
                 </div>
 
                 <div class="searchContainer">
                     <div class="searchContant">
                         <input type="text" placeholder="Search Friends" id="search" aria-label="Search" autocomplete="off" />
                         <span class="focus-border"></span>
-                        <img src="images/search.webp" alt="search" id="searchImg">
+                        <img src="images/search.png" alt="search" id="searchImg">
                         <div id="searchResults"></div>
                     </div>
                 </div>
             </div>
         </div>
-
     </header>
 
     <main>
-
         <div class="spinnerWrapper">
             <div class="loader loader-1">
                 <div class="loader-outter"></div>
@@ -69,7 +65,7 @@
         <div class="container"></div>
     </main>
 
-    <img src="images/upBtn.webp" alt="up arrow" class="goToTopBtn" onclick="goToTop()" />
+    <svg id="goToTopBtn" onclick="goToTop()" xmlns="http://www.w3.org/2000/svg" width="45" height="45" viewBox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm0 7.58l5.995 5.988-1.416 1.414-4.579-4.574-4.59 4.574-1.416-1.414 6.006-5.988z"/></svg>
 
     <!----------------POPUPS---------------->
     <!------------Person Details----------->
@@ -88,8 +84,8 @@
             </div>
             
             <div class="linksWrapper">
-                <a href="" target="_blank" id="facebookLink" rel="noopener"><img src="./images/facebook.webp" alt="facebook image" id="facebookImage" /></a>
-                <a href="" target="_blank" id="instagramLink" rel="noopener"><img src="./images/instagram.webp" alt="instagram image" id="instagramImage" /></a>
+                <a href="" target="_blank" id="facebookLink" rel="noopener"><img src="./images/facebook.png" alt="facebook image" id="facebookImage" /></a>
+                <a href="" target="_blank" id="instagramLink" rel="noopener"><img src="./images/instagram.png" alt="instagram image" id="instagramImage" /></a>
             </div>
             <div class="popupBtnsWrapper">
                 <div title="Add to Calendar" class="addeventatc engCaneldar" data-direct="google">
