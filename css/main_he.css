@@ -3,10 +3,6 @@ body {
     font-family: 'David Libre', serif;
 }
 
-.header {
-    background-image: linear-gradient(to right, rgba(200, 200, 200, .95), rgba(0,0,0,.95));
-}
-
 .popupBtn {
     font-family: 'David Libre', serif;
 }
@@ -49,15 +45,13 @@ body {
     font-size: 1.3rem;
 }
 
-@media only screen and (max-width: 440px) {
-    h1 {
-        font-size: 1.5rem;
+@media only screen and (max-width: 430px) {
+    .personDetailsWrapper {
+        margin-right: 0;
+        margin-left: .5rem;
     }
-}
 
-@media only screen and (max-width: 370px) {
-
-    h1 {
-        font-size: 1.2rem;
+    .personWrapper p {
+        text-align: right;
     }
 }
