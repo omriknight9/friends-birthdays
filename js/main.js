@@ -187,7 +187,7 @@ const loadJson = (textFile) => {
         friends.push(JSON.parse(data));
         setTimeout(function () {
             buildPeople($('.container'), friends);
-            $('body').css('background-image', 'linear-gradient(180deg,rgba(200, 200, 200, .95), rgba(50,50,50,.95))');
+            // $('body').css('background-image', 'linear-gradient(180deg,rgba(200, 200, 200, .95), rgba(50,50,50,.95))');
         }, 500);
     });
 }
@@ -534,7 +534,29 @@ const buildPeople = (wrapper, arr) => {
         } else {
             $(personWrapper).attr('calendar', $(personWrapper).attr('calendar') + '/' + year);
         }
-        
+      
+        let personImgWrapper = $('<div>', {
+            class: 'personImgWrapper',
+        }).appendTo(personWrapper);
+
+        let finalImg;
+
+        if (people[i].image == 'null') {
+            if (people[i].gender == 1) {
+                finalImg = './images/actor.jpg';
+            } else {
+                finalImg = './images/actress.jpg';
+            }
+        } else {
+            finalImg = './images/people' + people[i].image;
+        }
+
+        $('<img>', {
+            class: 'personImg',
+            alt: 'personImg',
+            src: finalImg
+        }).appendTo(personImgWrapper);
+
         let personDetailsWrapper = $('<div>', {
             class: 'personDetailsWrapper',
         }).appendTo(personWrapper);
@@ -548,16 +570,6 @@ const buildPeople = (wrapper, arr) => {
             class: 'personBirthday',
             text: birthday + dateForShow
         }).appendTo(personDetailsWrapper);
-
-        let personImgWrapper = $('<div>', {
-            class: 'personImgWrapper',
-        }).appendTo(personWrapper);
-
-        $('<img>', {
-            class: 'personImg',
-            alt: 'personImg',
-            src: './images/people' + people[i].image
-        }).appendTo(personImgWrapper);
     }
 
     setTimeout(function () {
@@ -1015,7 +1027,7 @@ const sortFriends = (elem1, kind) => {
                     $('.personWrapper').first().remove();
                 }
                 
-                $('body').css('background-image', 'unset');
+                // $('body').css('background-image', 'unset');
                 $('.spinnerWrapper').show();
                 $('.btnWrapper').css('opacity', 0);
                 $('.groupSortBtn').css('pointer-events', 'none');
