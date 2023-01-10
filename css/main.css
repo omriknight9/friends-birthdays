@@ -1,3 +1,6 @@
+:root {
+    --orange: #ff7b00;
+}
 
 html {
     position: relative;
@@ -10,10 +13,13 @@ body {
     margin: 0;
     -webkit-appearance: none;
     -webkit-tap-highlight-color: transparent;
+    background: url('../images/background.jpg');
+    background-size: 100%;
+    background-attachment: fixed;
 }
 
 main {
-    margin-top: 12rem;
+    margin-top: 3rem;
 }
 
 ::-webkit-scrollbar-track {
@@ -29,32 +35,12 @@ main {
 ::-webkit-scrollbar-thumb {
     box-shadow: inset 0 0 1px rgba(0,0,0,0.3);
 	-webkit-box-shadow: inset 0 0 1px rgba(0,0,0,.3);
-	background-color: #ff5a4e;
+	background-color: var(--orange);
 }
 
 .headerContainer {
     width: 100%;
     z-index: 1;
-}
-
-.header {
-    display: block;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    height: 10rem;
-    background-image: linear-gradient(to right, rgba(0, 0, 0, .95), rgba(200,200,200,.95));
-    box-shadow: 0 1px 5px #4caf50;
-    transition: .5s;
-    -webkit-transition: .5s;
-    -o-transition: .5s;
-    -moz-transition: .5s;
-    z-index: 4;
-}
-
-h1 {
-	text-align: center;
-	margin-top: 2rem;
 }
 
 #langBtnEn {
@@ -97,7 +83,7 @@ h1 {
     outline: none;
     cursor: pointer;
     border-radius: 5px;
-    box-shadow: 0 1px 3px 3px #848484;
+    filter: drop-shadow(rgba(0, 0, 0, 0.8) 0px 1px 1px);
     transition: .3s;
     -webkit-transition: .3s;
     -o-transition: .3s;
@@ -131,24 +117,23 @@ h1 {
     -webkit-flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    background-image: linear-gradient(to right,#e0ffff,rgba(255,0,0,.9),#e0ffff);
+    background-image: linear-gradient(to right,rgb(83, 83, 83),rgb(255,123,0),rgb(83, 83, 83));
     border-radius: 5px;
-    box-shadow: 0 1px 3px 3px #848484;
+    filter: drop-shadow(rgba(0, 0, 0, 0.8) 0px 1px 1px);
     margin: auto;
 }
 
 button:active {
-  box-shadow: 0 5px 5px #666;
-  transform: translateY(4px);
-  -ms-transform: translateY(4px);
-  -moz-transform: translateY(4px);
-  -webkit-transform: translateY(4px);
-  -o-transform: translateY(4px);
+    filter: drop-shadow(rgba(0, 0, 0, 0.8) 0px 1px 1px);
+    transform: translateY(4px);
+    -ms-transform: translateY(4px);
+    -moz-transform: translateY(4px);
+    -webkit-transform: translateY(4px);
+    -o-transform: translateY(4px);
 }
 
 .searchContainer {
-    position: absolute;
-    top: 6rem;
+    margin-top: 2rem;
     width: 100%;
     text-align: center;
     z-index: 1;
@@ -156,18 +141,19 @@ button:active {
 
 .searchContant {
     position: relative;
-    width: 30%;
+    width: 60%;
     margin: auto;
+    z-index: 9999;
 }
 
 #searchResults {
     display: none;
     position: absolute;
-    background-image: linear-gradient(to right, rgba(170, 0, 0, .95), rgba(200,200,200,.95));
-    box-shadow: 0 3px 8px 0 #848484;
+    background-image: linear-gradient(to right, rgb(255,123,0), rgba(200,200,200,.95));
+    filter: drop-shadow(rgba(0, 0, 0, 0.8) 0px 1px 1px);
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
-    height: 15rem;
+    max-height: 25rem;
     overflow-y: scroll;
     width: 100%;
 }
@@ -177,7 +163,7 @@ button:active {
 }
 
 #searchResults::-webkit-scrollbar-thumb {
-    background-color: #ff5a4e;
+    background-color: var(--orange);
     border-bottom-right-radius: 5px;
 }
 
@@ -203,6 +189,7 @@ button:active {
 .resultImg {
     width: 80px;
     border-radius: 5px;
+    filter: drop-shadow(rgba(0, 0, 0, 0.8) 0px 1px 1px);
 }
 
 #search {
@@ -239,7 +226,7 @@ button:active {
     left: 50%;
     width: 0;
     height: 2px;
-    background-color: #ff5a4e;
+    background-color: var(--orange);
     transition: 0.4s;
     -webkit-transition: 0.4s;
     -moz-transition: 0.4s;
@@ -388,6 +375,7 @@ p {
 
 .closestBirth, .birthdayWish, #BirthdayWish {
     font-size: 1.5rem;
+    color: lightgray;
 }
 
 .birthdayColor {
@@ -457,15 +445,36 @@ p {
     justify-content: center;
 }
 
-.oddGroup {
+/* .oddGroup {
     background-image: linear-gradient(180deg,rgba(200, 200, 200, .95), rgba(50,50,50,.95));
 }
 
 .evenGroup {
     background-image: linear-gradient(-180deg,rgba(50, 50, 50, .95), rgba(200,200,200,.95));
+} */
+
+.groupWrapper:nth-child(even)::after {
+    content: '';
+    background: linear-gradient(to right, transparent, #3a47e4, transparent);
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
 }
 
-.evenGroup::after {
+.groupWrapper:nth-child(odd)::after {
+    content: '';
+    background: linear-gradient(to right, transparent, #3fe09b, transparent);
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+}
+
+
+/* .evenGroup::after {
     content: '';
     background: linear-gradient(to right, transparent, #3a47e4, transparent);
     position: absolute;
@@ -483,7 +492,7 @@ p {
     bottom: 0;
     width: 100%;
     height: 1px;
-}
+} */
 
 .girl {
     background-color: pink;
@@ -518,7 +527,6 @@ p {
 }
 
 .personWrapper {
-    box-shadow: 0 3px 8px 3px #848484;
     border-radius: 5px;
     margin: 2rem;
     text-align: center;
@@ -531,6 +539,10 @@ p {
     width: 20rem;
     height: 25rem;
     z-index: 2;
+    clip-path: polygon(30% 0%, 100% 0, 100% 30%, 100% 95%, 89% 100%, 0 100%, 0% 92%, 0 0);
+    -ms-clip-path: polygon(30% 0%, 100% 0, 100% 30%, 100% 95%, 89% 100%, 0 100%, 0% 92%, 0 0);
+    -o-clip-path: polygon(30% 0%, 100% 0, 100% 30%, 100% 95%, 89% 100%, 0 100%, 0% 92%, 0 0);
+    -webkit-clip-path: polygon(30% 0%, 100% 0, 100% 30%, 100% 95%, 89% 100%, 0 100%, 0% 92%, 0 0);
 }
 
 .personDetailsWrapper {
@@ -542,7 +554,7 @@ p {
 .personWrapper p {
     font-size: 1.3rem;
     color: white;
-    text-shadow: 1px 1px 6px black;
+    filter: drop-shadow(0 1px 4px rgba(0, 0, 0, 0.8));
     z-index: 2;
 }
 
@@ -579,7 +591,7 @@ p {
     width: 10rem;
     height: 10rem;
     border-radius: 100px;
-    box-shadow: 0 1px 3px 3px #848484;
+    filter: drop-shadow(0 1px 4px rgba(0, 0, 0, 0.8));
 }
 
 #goToTopBtn {
@@ -609,12 +621,12 @@ p {
 .popUpInfo {
     display: none;
     position: fixed;
-    z-index: 999;
     width: 100%;
     height: 100%;
     min-height: 900px;
     background: rgba(210,220,225,.8);
     top: 0;
+    z-index: 99999999;
 }
 
 .popUpInfo h2 {
@@ -697,7 +709,7 @@ p {
     border-radius: 5px;
     cursor:pointer;
     background-color: #ff5a4e;
-    box-shadow: 0 0 0 0.5px rgba(50,50,93,.17), 0 2px 5px 0 rgba(50,50,93,.1), 0 1px 1.5px 0 rgba(0,0,0,.07), 0 1px 2px 0 rgba(0,0,0,.08), 0 0 0 0 transparent!important;
+    filter: drop-shadow(0 1px 4px rgba(0, 0, 0, 0.8));
     font-family: Kurale, sans-serif;
 }
 
@@ -789,6 +801,7 @@ p {
     .personWrapper {
         width: 15rem;
         margin: 1rem;
+        height: 22rem;
     }
 
     .clothesImg {
@@ -812,10 +825,6 @@ p {
 
     .popupCont {
         width: 65%;
-    }
-
-    .searchContant {
-        width: 75%;
     }
 }
 
@@ -877,7 +886,6 @@ p {
 }
 
 @media only screen and (max-width: 460px) {
-
     .genderImg {
         width: 20px;
     }
@@ -888,7 +896,11 @@ p {
     }
 
     .personWrapper {
-        width: 9rem;
+        width: 11rem;
+    }
+
+    .searchContainer {
+        margin-top: 7rem;
     }
 
     .searchContant {
@@ -905,10 +917,41 @@ p {
         height: 75px;
     }
 }
-@media only screen and (max-width: 410px) {
 
-    h1 {
-        font-size: 1.5rem;
+@media only screen and (max-width: 430px) {
+    .personWrapper {
+        width: 100%;
+        height: 12rem;
+        display: flex;
+        box-sizing: border-box;
+        justify-content: space-between;
+        align-items: center;
+        margin: .5rem;
+    }
+
+    .personImgWrapper {
+        width: unset;
+        position: static;
+        display: inline-block;
+        margin-right: .5rem;
+    }
+
+    .personImg {
+        width: 6rem;
+        height: 6rem;
+        margin-left: .5rem;
+    }
+
+    .personDetailsWrapper {
+        display: inline-block;
+        position: static;
+        width: unset;
+        margin-right: .5rem;
+    }
+
+    .personWrapper p {
+        text-align: left;
+        margin: 0;
     }
 
     .popupCont {
@@ -917,13 +960,8 @@ p {
 }
 
 @media only screen and (max-width: 370px) {
-
     .clothesImg {
         height: 80%;
-    }
-
-    .suit {
-        opacity: .15;
     }
 
     #facebookImage {
@@ -936,14 +974,6 @@ p {
         height: 65px;
     }
 
-    #search {
-        font-size: 1.1rem;
-    }
-
-    .personWrapper {
-        width: 7rem;
-    }
-
     .personImg {
         width: 6rem;
         height: 6rem;
@@ -952,19 +982,9 @@ p {
     .genderImg {
         right: .5rem;
     }
-
-    .zodiacImg {
-        width: 25px;
-        left: .2rem;
-    }
 }
 
 @media only screen and (max-width: 350px) {
-
-    h1 {
-        font-size: 1.2rem;
-    }
-
     .popupBtnsWrapper {
         margin-top: 1rem;
     }
