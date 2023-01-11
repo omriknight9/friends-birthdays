@@ -16,7 +16,7 @@ body {
     left: 1rem;
 }
 
-.nextBirthday, .btnWrapper, .sortContainer {
+.nextBirthday {
     direction: rtl;
 }
 
