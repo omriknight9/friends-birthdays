@@ -10,6 +10,7 @@
     <link rel="icon" href="images/birthdayCake.png">
     <link href="https://fonts.googleapis.com/css?family=Kurale&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=David+Libre&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/6ee0bca91e.js" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
     <script type="text/javascript" src="js/translations.js"></script>
@@ -41,16 +42,11 @@
         <p id="BirthdayWish"></p>
         <div id="birthdayToday"></div>
 
-        <div class="btnWrapper">
-            <div class="sortContainer">
-                <div class="sortContent">
-                    <button class="ageSortBtn" onclick="sortFriends('birthday', 1)">By Age</button>
-                    <button class="calendarSortBtn" onclick="sortFriends('calendar', 1)">By Date</button>
-                    <button class="nameSortBtn" onclick="sortFriends('name', 2)">By Name</button>
-                    <button class="groupSortBtn" onclick="sortFriends('group', 3)">By Group</button>
-                </div>
-            </div>
-            <button class="sortBtn" onclick="sort()">Sort</button>
+        <div class="sortWrapper">
+            <i class="ageSortBtn fa-solid fa-arrow-down-9-1" onclick="sortFriends('birthday', 1)"></i>
+            <i class="calendarSortBtn fa-solid fa-calendar-days" onclick="sortFriends('calendar', 2)"></i>
+            <i class="nameSortBtn fa-solid fa-arrow-down-z-a" onclick="sortFriends('name', 3)"></i>
+            <i class="fa-solid fa-arrows-rotate" onclick="sortFriends('group', 4)"></i>
         </div>
 
         <div class="container"></div>
