@@ -4,7 +4,6 @@ let counter = 1;
 let lang = 1;
 let now = new Date();
 let currentYear = now.getFullYear();
-let sortBtnCounter = 1;
 let birthdayArr = [];
 let birthdayToday = false;
 let searchVal;
@@ -55,7 +54,6 @@ $(document).ready(function (event) {
     setTimeout(function () {
         $('.spinnerWrapper').hide();
         $('.searchContainer').show();
-        $('.btnWrapper').css('opacity', 1);
     }, 1500);
 
     $('#search').on('input', function () {
@@ -161,25 +159,11 @@ const showFriends = () => {
     $('.container').empty();
     friends = [];
     counter = 1;
-    $('.btnWrapper').css('opacity', 0);
     $('.spinnerWrapper').show();
 
     setTimeout(function () {
         loadJson('./lists/friends.txt');
     }, 500);
-
-    $('.sortContainer').fadeOut('fast');
-    sortBtnCounter = 1
-}
-
-const sort = () => {
-    if (sortBtnCounter == 1) {
-        $('.sortContainer').fadeIn('fast');
-        sortBtnCounter = 2;
-    } else {
-        $('.sortContainer').fadeOut('fast');
-        sortBtnCounter = 1;
-    }
 }
 
 const loadJson = (textFile) => {
@@ -219,11 +203,11 @@ const buildPeople = (wrapper, arr) => {
                 class: 'parentDiv'            
             }).appendTo(groupWrapper);
 
-            if (group % 2 == 0) {
-                $(groupWrapper).addClass('evenGroup');
-            } else {
-                $(groupWrapper).addClass('oddGroup');
-            }
+            // if (group % 2 == 0) {
+            //     $(groupWrapper).addClass('evenGroup');
+            // } else {
+            //     $(groupWrapper).addClass('oddGroup');
+            // }
         }
 
         let nameToShow;
@@ -575,7 +559,6 @@ const buildPeople = (wrapper, arr) => {
     setTimeout(function () {
         checkAge();
         checkClosest();
-        $('.btnWrapper').css('opacity', 1);
         $('.spinnerWrapper').hide();
     }, 0);
 }
@@ -942,26 +925,25 @@ function scrollBtn() {
 }
 
 const sortFriends = (elem1, kind) => {
-    $('.groupWrapper').removeClass('oddGroup');
-    $('.groupWrapper').removeClass('evenGroup');
+    resetIcons();
 
     if (elem1 == 'calendar') {
         // counter = 2;
     }
 
-    else if ($('.btnWrapper').attr('kind') == kind) {
+    else if ($('.sortWrapper').attr('kind') == kind) {
     }
 
     else {
-        $('.btnWrapper').attr('kind', kind);
+        $('.sortWrapper').attr('kind', kind);
         counter = 1;
     }
 
-    if (kind == 3) {
+    if (kind == 4) {
         $('.container').empty();
     }
 
-    if (lang == 2 && elem1 == 'name') {
+    if (lang == 2 && kind == 3) {
         elem1 = 'nameHeb';
     }
 
@@ -973,13 +955,13 @@ const sortFriends = (elem1, kind) => {
             obj.element = children[i];
             let elem2 = $(children[i]).attr(elem1);
             switch (kind) {
-                case 1:
+                case 1: case 2:
                     obj.idNum = new Date(elem2);
                     break;
-                case 2:
+                case 3:
                     obj.idNum = elem2;
                     break;
-                case 3:
+                case 4:
                     obj.idNum = parseInt(elem2.replace(/[^\d]/g, ""), 10);
                     break;
             }
@@ -991,6 +973,22 @@ const sortFriends = (elem1, kind) => {
                 switch (counter) {
                     case 1:
                         ids.sort(function (a, b) { return (b.idNum - a.idNum); });
+                        $('.ageSortBtn').attr('class', 'ageSortBtn fa-solid fa-arrow-down-1-9');
+                        counter = 2;
+                        break;
+                    case 2:
+                        ids.sort(function (a, b) { return (a.idNum - b.idNum); });
+                        $('.ageSortBtn').attr('class', 'ageSortBtn fa-solid fa-arrow-down-9-1');
+                        counter = 1;
+                        break;
+                }
+                $('.sortWrapper').attr('kind', kind);
+                $('.groupSortBtn').css('pointer-events', 'all');
+                break;
+            case 2:
+                switch (counter) {
+                    case 1:
+                        ids.sort(function (a, b) { return (b.idNum - a.idNum); });
                         counter = 2;
                         break;
                     case 2:
@@ -998,15 +996,16 @@ const sortFriends = (elem1, kind) => {
                         counter = 1;
                         break;
                 }
-                $('.btnWrapper').attr('kind', kind);
+                $('.sortWrapper').attr('kind', kind);
                 $('.groupSortBtn').css('pointer-events', 'all');
                 break;
-            case 2:
+            case 3:
                 switch (counter) {
                     case 1:
                         ids.sort(function (a, b) {
                             return a.idNum.localeCompare(b.idNum);
                         });
+                        $('.nameSortBtn').attr('class', 'nameSortBtn fa-solid fa-arrow-down-a-z');
                         counter = 2;
                         break;
 
@@ -1014,26 +1013,26 @@ const sortFriends = (elem1, kind) => {
                         ids.sort(function (a, b) {
                             return b.idNum.localeCompare(a.idNum);
                         });
+                        $('.nameSortBtn').attr('class', 'nameSortBtn fa-solid fa-arrow-down-z-a');
                         counter = 1;
                         break;
                 }
-                $('.btnWrapper').attr('kind', kind);
+
+                $('.sortWrapper').attr('kind', kind);
                 $('.groupSortBtn').css('pointer-events', 'all');
                 break;
-            case 3:
+            case 4:
                 $('.closestBirth').html('');
                 $('.birthdayWish').html('');
                 if (birthdayToday) {
                     $('.personWrapper').first().remove();
                 }
                 
-                // $('body').css('background-image', 'unset');
                 $('.spinnerWrapper').show();
-                $('.btnWrapper').css('opacity', 0);
                 $('.groupSortBtn').css('pointer-events', 'none');
                 showFriends();
+
                 setTimeout(function () {
-                    $('.btnWrapper').css('opacity', 1);
                     $('.spinnerWrapper').hide();
                 }, 500);
                 break;
@@ -1043,9 +1042,11 @@ const sortFriends = (elem1, kind) => {
             $(this).append(ids[i].element);
         }
     });
+}
 
-    $('.sortContainer').fadeOut('fast');
-    sortBtnCounter = 1
+const resetIcons = () => {
+    $('.ageSortBtn').attr('class', 'ageSortBtn fa-solid fa-arrow-down-9-1');
+    $('.nameSortBtn').attr('class', 'nameSortBtn fa-solid fa-arrow-down-z-a');
 }
 
 const removePopup = (container) => {
