@@ -195,12 +195,6 @@ const buildPeople = (wrapper, arr) => {
             var parentDiv = $('<div>', {
                 class: 'parentDiv'            
             }).appendTo(groupWrapper);
-
-            // if (group % 2 == 0) {
-            //     $(groupWrapper).addClass('evenGroup');
-            // } else {
-            //     $(groupWrapper).addClass('oddGroup');
-            // }
         }
 
         let nameToShow;
