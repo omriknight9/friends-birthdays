@@ -927,14 +927,7 @@ function scrollBtn() {
 const sortFriends = (elem1, kind) => {
     resetIcons();
 
-    if (elem1 == 'calendar') {
-        // counter = 2;
-    }
-
-    else if ($('.sortWrapper').attr('kind') == kind) {
-    }
-
-    else {
+    if (kind !== 2 && $('.sortWrapper').attr('kind') !== kind.toString()) {
         $('.sortWrapper').attr('kind', kind);
         counter = 1;
     }
