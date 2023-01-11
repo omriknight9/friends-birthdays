@@ -60,76 +60,19 @@ main {
     right: 0;
 }
 
-.btnWrapper {
-    display: flex;
-    box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    flex-wrap: wrap;
-    -webkit-flex-wrap: wrap;
-    justify-content: center;
-    margin-bottom: 1.5rem;
+.sortWrapper {
     width: 100%;
-    opacity: 0;
-    position: relative;
+    text-align: center;
 }
 
-.btnWrapper button {
-    border: none;
-    width: 7rem;
-    height: 3rem;
-    margin: 1rem;
-    background: white;
-    outline: none;
-    cursor: pointer;
-    border-radius: 5px;
+.sortWrapper i {
+    color: var(--orange);
+    font-size: 1.4rem;
     filter: drop-shadow(rgba(0, 0, 0, 0.8) 0px 1px 1px);
-    transition: .3s;
-    -webkit-transition: .3s;
-    -o-transition: .3s;
-    -moz-transition: .3s;
-    font-family: Kurale, sans-serif;
-    font-size: 1rem;
 }
 
-#animalImg {
-    position: absolute;
-    width: 250px;
-    height: 250px;
-    z-index: 3;
-}
-
-.sortContainer {
-    display: none;
-    width: 100%;
-    position: absolute;
-    top: 5rem;
-    z-index: 3;
-}
-
-.sortContent {
-    width: 50%;
-    display: flex;
-    box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    flex-wrap: wrap;
-    -webkit-flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    background-image: linear-gradient(to right,rgb(83, 83, 83),rgb(255,123,0),rgb(83, 83, 83));
-    border-radius: 5px;
-    filter: drop-shadow(rgba(0, 0, 0, 0.8) 0px 1px 1px);
-    margin: auto;
-}
-
-button:active {
-    filter: drop-shadow(rgba(0, 0, 0, 0.8) 0px 1px 1px);
-    transform: translateY(4px);
-    -ms-transform: translateY(4px);
-    -moz-transform: translateY(4px);
-    -webkit-transform: translateY(4px);
-    -o-transform: translateY(4px);
+.sortWrapper i:not(:last-child) {
+    margin-right: .5rem;
 }
 
 .searchContainer {
@@ -419,7 +362,6 @@ p {
     flex-wrap: wrap;
     -webkit-flex-wrap: wrap;
     justify-content: center;
-    box-shadow: 0 1px 5px #4caf50;
 }
 
 .groupWrapper {
@@ -434,6 +376,16 @@ p {
     position: relative;
 }
 
+.groupWrapper::after {
+    content: '';
+    background: linear-gradient(to right, transparent, var(--orange), transparent);
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+}
+
 .parentDiv {
     width: 100%;
     display: flex;
@@ -444,55 +396,6 @@ p {
     -webkit-flex-wrap: wrap;
     justify-content: center;
 }
-
-/* .oddGroup {
-    background-image: linear-gradient(180deg,rgba(200, 200, 200, .95), rgba(50,50,50,.95));
-}
-
-.evenGroup {
-    background-image: linear-gradient(-180deg,rgba(50, 50, 50, .95), rgba(200,200,200,.95));
-} */
-
-.groupWrapper:nth-child(even)::after {
-    content: '';
-    background: linear-gradient(to right, transparent, #3a47e4, transparent);
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 1px;
-}
-
-.groupWrapper:nth-child(odd)::after {
-    content: '';
-    background: linear-gradient(to right, transparent, #3fe09b, transparent);
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 1px;
-}
-
-
-/* .evenGroup::after {
-    content: '';
-    background: linear-gradient(to right, transparent, #3a47e4, transparent);
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 1px;
-}
-
-.oddGroup::after {
-    content: '';
-    background: linear-gradient(to right, transparent, #3fe09b, transparent);
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 1px;
-} */
 
 .girl {
     background-color: pink;
@@ -793,11 +696,6 @@ p {
 }
 
 @media only screen and (max-width: 1200px) {
-
-    .sortContent {
-        width: 70%;
-    }
-
     .personWrapper {
         width: 15rem;
         margin: 1rem;
@@ -814,36 +712,22 @@ p {
     }
 }
 
-@media only screen and (max-width: 1100px) {
-    #animalImg {
-        width: 150px;
-        height: 150px;
-    }
-}
-
 @media only screen and (max-width: 1000px) {
-
     .popupCont {
         width: 65%;
     }
 }
 
 @media only screen and (max-width: 880px) {
-
-    #animalImg {
-        display: none;
-    }
- 
-    .sortContent {
-        width: 90%;
-    }
-
     .personWrapper img {
         margin-right: 0;
     }
 }
 
 @media only screen and (min-width: 765px) {
+    .sortWrapper i {
+        cursor: pointer;
+    }
 
     .personWrapper:hover {
         transform: scale(1.05);
@@ -861,7 +745,6 @@ p {
 }
 
 @media only screen and (max-width: 550px) {
-
     .popUpInfo p , .nextBirthday, #checkBirthdaysLink {
         font-size: 1rem;
     }
