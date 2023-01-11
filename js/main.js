@@ -745,9 +745,18 @@ const checkClosest = () => {
                     }
                 });       
             } else {
+
+                let finalBirthdayText;
+
+                if (birthdayArr[0].gender == 1) {
+                    finalBirthdayText = 'החוגג הקרוב: ';
+                } else {
+                    finalBirthdayText = 'החוגגת הקרובה: ';
+                }
+
                 let closest = $('<p>',{
                     class: 'closestBirth',
-                    text: 'החוגג הקרוב: '
+                    text: finalBirthdayText
                 }).insertAfter($('.spinnerWrapper'));
 
                 $('<span>', {
