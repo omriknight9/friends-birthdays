@@ -78,18 +78,11 @@ const showResult = (that, resultNum) => {
     for (let i = 0; i < $(that).length; i++) {
         let personName = $($(that)[i]).attr('name').toLowerCase();
         let personNameHeb = $($(that)[i]).attr('nameHeb');
-        let personNameCapital;
         let personImg = $($(that)[i]).attr('img');
         let searchVal = $('#search').val();
         let searchValCapitalized = searchVal.charAt(0).toUpperCase() + searchVal.slice(1);
         let cap;
         let serachFinal;
-
-        if (lang == 1) {
-            personNameCapital = personName.toUpperCase();
-        } else {
-            personNameCapital = personNameHeb.toUpperCase();
-        }
 
         try {
             if (lang == 1) {
@@ -160,6 +153,7 @@ const showFriends = () => {
     friends = [];
     counter = 1;
     $('.spinnerWrapper').show();
+    $('.closestBirth').remove();
 
     setTimeout(function () {
         loadJson('./lists/friends.txt');
@@ -171,7 +165,6 @@ const loadJson = (textFile) => {
         friends.push(JSON.parse(data));
         setTimeout(function () {
             buildPeople($('.container'), friends);
-            // $('body').css('background-image', 'linear-gradient(180deg,rgba(200, 200, 200, .95), rgba(50,50,50,.95))');
         }, 500);
     });
 }
@@ -597,16 +590,10 @@ const checkClosest = () => {
         });
 
         if (lang == 1) {
-            let gender;
             if (birthdayToday) {
                 $.each($('.personWrapper'), function (key, value) {
                     if ($(value).attr('month') == now.getMonth() + 1 && $(value).attr('day') == now.getDate()) {
                         $(value).clone().appendTo($('#birthdayToday'));
-                        if ($(value).attr('gender') == 1) {
-                            gender = 1;
-                        } else {
-                            gender = 2;
-                        }
                     }
                 });
 
@@ -705,11 +692,6 @@ const checkClosest = () => {
                 $.each($('.personWrapper'), function (key, value) {
                     if ($(value).attr('month') == now.getMonth() + 1 && $(value).attr('day') == now.getDate()) {
                         $(value).clone().appendTo($('#birthdayToday'));
-                        if ($(value).attr('gender') == 1) {
-                            gender = 1;
-                        } else {
-                            gender = 2;
-                        }
                     }
                 });
 
@@ -1015,8 +997,7 @@ const sortFriends = (elem1, kind) => {
                 $('.groupSortBtn').css('pointer-events', 'all');
                 break;
             case 4:
-                $('.closestBirth').html('');
-                $('.birthdayWish').html('');
+                $('.closestBirth, .birthdayWish').html('');
                 if (birthdayToday) {
                     $('.personWrapper').first().remove();
                 }
