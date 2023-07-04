@@ -20,9 +20,9 @@
 	{"id": 17,  "name": "Ziv", "nameHeb": "זיו", "birthday": "03/05/1990", "image": "/ziv.jpg", "facebook": "/zfoox", "instagram": "/zivfoox", "group": 8.1, "afterSunset": "null", "gender": 1, "parent": 0, "married": 0},
 	{"id": 18,  "name": "Gal", "nameHeb": "גל", "birthday": "12/28/1993", "image": "/gal.jpg", "facebook": "/Gal.Mendelson", "instagram": "null", "group": 9.1, "afterSunset": "null", "gender": 1, "parent": 0, "married": 0},
 	{"id": 19,  "name": "Kim", "nameHeb": "קים", "birthday": "11/27/1990", "image": "/kim.jpg", "facebook": "/kim.vain.1", "instagram": "/kim_wain", "group": 10.1, "afterSunset": "null", "gender": 1, "parent": 0, "married": 0},
-	{"id": 20,  "name": "Nofar", "nameHeb": "נופר", "birthday": "01/23/1990", "image": "/nofar.jpeg", "facebook": "/nofar.shternfeld", "instagram": "/nofar_wain", "group": 10.2, "afterSunset": "null", "gender": 2, "parent": 0, "married": 1}
+	{"id": 20,  "name": "Nofar", "nameHeb": "נופר", "birthday": "01/23/1990", "image": "/nofar.jpeg", "facebook": "/nofar.shternfeld", "instagram": "/nofar_wain", "group": 10.2, "afterSunset": "null", "gender": 2, "parent": 0, "married": 1},
 	{"id": 21,  "name": "Ben", "nameHeb": "בן", "birthday": "11/27/1990", "image": "/ben.jpg", "facebook": "/ben.vaindling", "instagram": "/benvini8", "group": 11.1, "afterSunset": "null", "gender": 1, "parent": 0, "married": 0},
-	{"id": 22,  "name": "Idan", "nameHeb": "עידן", "birthday": "07/06/1990", "image": "/idanNiazov.jpg", "facebook": "/idan.niazov", "instagram": "/idan_niazov", "group": 12.1, "afterSunset": "null", "gender": 1, "parent": 0, "married": 1},
+	{"id": 22,  "name": "Idan", "nameHeb": "עידן", "birthday": "07/06/1990", "image": "/idanNiazov.jpg", "facebook": "/idan.niazov", "instagram": "/idan_niazov", "group": 12.1, "afterSunset": "null", "gender": 1, "parent": 0, "married": 1}
 	
     ]
 }
