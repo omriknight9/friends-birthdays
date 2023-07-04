@@ -22,7 +22,8 @@
 	{"id": 19,  "name": "Kim", "nameHeb": "קים", "birthday": "11/27/1990", "image": "/kim.jpg", "facebook": "/kim.vain.1", "instagram": "/kim_wain", "group": 10.1, "afterSunset": "null", "gender": 1, "parent": 0, "married": 0},
 	{"id": 20,  "name": "Nofar", "nameHeb": "נופר", "birthday": "01/23/1990", "image": "/nofar.jpeg", "facebook": "/nofar.shternfeld", "instagram": "/nofar_wain", "group": 10.2, "afterSunset": "null", "gender": 2, "parent": 0, "married": 1},
 	{"id": 21,  "name": "Ben", "nameHeb": "בן", "birthday": "11/27/1990", "image": "/ben.jpg", "facebook": "/ben.vaindling", "instagram": "/benvini8", "group": 11.1, "afterSunset": "null", "gender": 1, "parent": 0, "married": 0},
-	{"id": 22,  "name": "Idan", "nameHeb": "עידן", "birthday": "07/06/1990", "image": "/idanNiazov.jpg", "facebook": "/idan.niazov", "instagram": "/idan_niazov", "group": 12.1, "afterSunset": "null", "gender": 1, "parent": 0, "married": 1}
+	{"id": 22,  "name": "Idan", "nameHeb": "עידן", "birthday": "07/06/1990", "image": "/idanNiazov.jpg", "facebook": "/idan.niazov", "instagram": "/idan_niazov", "group": 12.1, "afterSunset": "null", "gender": 1, "parent": 1, "married": 1},
+	{"id": 23,  "name": "Nofar", "nameHeb": "נופר", "birthday": "08/28/1990", "image": "/nofarM.jpeg", "facebook": "/nofar.maimoni.5", "instagram": "null", "group": 12.2, "afterSunset": "null", "gender": 2, "parent": 1, "married": 1}
 	
     ]
 }
