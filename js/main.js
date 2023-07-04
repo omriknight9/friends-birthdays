@@ -8,7 +8,6 @@ let birthdayArr = [];
 let birthdayToday = false;
 let searchVal;
 let lastChar;
-
 const hebCalendarUrl = 'https://www.hebcal.com/converter?cfg=json';
 
 $(document).ready(function (event) {
