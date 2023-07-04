@@ -48,7 +48,7 @@ $(document).ready(function (event) {
 
     $('.Xbtn').click(function () {
         $(this).parent().parent().fadeOut(150);
-    })
+    });
 
     setTimeout(function () {
         $('.spinnerWrapper').hide();
@@ -70,7 +70,7 @@ $(document).ready(function (event) {
             let friendNumId = $(value).attr('numId');
             showResult($(this), friendNumId);
         });
-    })
+    });
 });
 
 const showResult = (that, resultNum) => {
