@@ -22,6 +22,10 @@ main {
     margin-top: 3rem;
 }
 
+.textShadow {
+    text-shadow: 0px 1px 1px black !important;
+}
+
 ::-webkit-scrollbar-track {
     box-shadow: inset 0 0 1px rgba(0,0,0,0.3);
 	-webkit-box-shadow: inset 0 0 1px rgba(0,0,0,0.3);
@@ -206,7 +210,7 @@ main {
     
 .loader-1 .loader-outter {
     position: absolute;
-    border: 4px solid #ef5350;
+    border: 4px solid var(--orange);
     border-left-color: transparent;
     border-bottom: 0;
     width: 100%;
@@ -219,7 +223,7 @@ main {
     
 .loader-1 .loader-inner {
     position: absolute;
-    border: 4px solid #ef5350;
+    border: 4px solid var(--orange);
     border-radius: 50%;
     width: 40px;
     height: 40px;
@@ -654,7 +658,8 @@ p {
     top: 7rem;
     left: 0;
     color: white;
-    text-shadow: 1px 1px 6px black;
+    filter: drop-shadow(0 1px 4px rgba(0, 0, 0, 0.8));
+    text-shadow: 0 0 3px black;
     z-index: 3;
     font-size: 1.2rem;
 }
@@ -665,7 +670,8 @@ p {
     left: 0;
     top: 4rem;
     color: white;
-    text-shadow: 1px 1px 6px black;
+    filter: drop-shadow(0 1px 4px rgba(0, 0, 0, 0.8));
+    text-shadow: 0 0 3px black;
     z-index: 3;
     font-size: 1.2rem;
 }
@@ -679,7 +685,8 @@ p {
 }
 
 #checkBirthdaysLink {
-    text-shadow: 1px 1px 6px black;
+    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.8));
+    text-shadow: 0 0 3px black;
     color: white;
     font-size: 1.2rem;
 }
@@ -873,5 +880,10 @@ p {
 @media only screen and (max-width: 350px) {
     .popupBtnsWrapper {
         margin-top: 1rem;
+    }
+
+    #addeventatc1, #addeventatc2 {
+        width: 8rem;
+        font-size: 1rem;
     }
 }
