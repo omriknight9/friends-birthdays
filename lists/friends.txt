@@ -1,4 +1,9 @@
 
+
+
+
+
+
 {
     "friends" : [
 	{"id": 1, "name": "Omri", "familyName": "Shalev", "nameHeb": "עמרי", "familyNameHeb": "שלו", "birthday":"10/31/1990",  "image": "/omri.jpg", "facebook": "/omri.shalev.31", "instagram": "/omri_shalev9",  "group": 1.1, "afterSunset": "true", "gender": 1, "parent": 1, "married": 1},
@@ -11,9 +16,9 @@
 	{"id": 8,  "name": "Idan", "familyName": "Pur", "nameHeb": "עידן", "familyNameHeb": "פור", "birthday": "08/15/1990", "image": "/idan.jpg", "facebook": "/idan.poor", "instagram": "/idanpur", "group": 3.1, "afterSunset": "null", "gender": 1, "parent": 1, "married": 1},
 	{"id": 9,  "name": "Amit", "familyName": "Wagner Pur", "nameHeb": "עמית", "familyNameHeb": "וגנר פור", "birthday": "03/01/1992", "image": "/amit.jpg", "facebook": "/amit.wagner.16", "instagram": "/amitwagnerpur", "group": 3.2, "afterSunset": "null", "gender": 2, "parent": 1, "married": 1},
 	{"id": 10,  "name": "Gaya", "familyName": "Pur", "nameHeb": "גאיה", "familyNameHeb": "פור", "birthday": "06/27/2020", "image": "/gaya.jpeg", "facebook": "null", "instagram": "null", "group": 3.3, "afterSunset": "null", "gender": 2, "parent": 0, "married": 0},
-	{"id": 11,  "name": "Gil", "familyName": "Tencer", "nameHeb": "גיל", "familyNameHeb": "טנצר", "birthday": "07/25/1990", "image": "/gil.jpg", "facebook": "/gil.tencer", "instagram": "/giltencer", "group": 4.1, "afterSunset": "null", "gender": 1, "parent": 0, "married": 1},
-	{"id": 12,  "name": "Gili", "familyName": "Eden Tencer", "nameHeb": "גילי", "familyNameHeb": "עדן טנצר", "birthday": "09/08/1993", "image": "/gili.jpg", "facebook": "/gilied", "instagram": "/gilieden", "group": 4.2, "afterSunset": "null", "gender": 2, "parent": 0, "married": 1},
-	{"id": 13,  "name": "Adam", "familyName": "Tencer", "nameHeb": "אדם", "familyNameHeb": "טנצר", "birthday": "09/08/1993", "image": "null", "facebook": "null", "instagram": "null", "group": 4.3, "afterSunset": "null", "gender": 1, "parent": 0, "married": 0},
+	{"id": 11,  "name": "Gil", "familyName": "Tencer", "nameHeb": "גיל", "familyNameHeb": "טנצר", "birthday": "07/25/1990", "image": "/gil.jpg", "facebook": "/gil.tencer", "instagram": "/giltencer", "group": 4.1, "afterSunset": "null", "gender": 1, "parent": 1, "married": 1},
+	{"id": 12,  "name": "Gili", "familyName": "Eden Tencer", "nameHeb": "גילי", "familyNameHeb": "עדן טנצר", "birthday": "09/08/1993", "image": "/gili.jpg", "facebook": "/gilied", "instagram": "/gilieden", "group": 4.2, "afterSunset": "null", "gender": 2, "parent": 1, "married": 1},
+	{"id": 13,  "name": "Adam", "familyName": "Tencer", "nameHeb": "אדם", "familyNameHeb": "טנצר", "birthday": "09/08/2023", "image": "null", "facebook": "null", "instagram": "null", "group": 4.3, "afterSunset": "null", "gender": 1, "parent": 0, "married": 0},
 	{"id": 14,  "name": "Omer", "familyName": "Shaarbani", "nameHeb": "עומר", "familyNameHeb": "שהרבני", "birthday": "08/10/1990", "image": "/omer.jpg", "facebook": "/omer.shaarbani", "instagram": "/shaarbani", "afterSunset": "null", "group": 5.1,  "gender": 1, "parent": 0, "married": 0},
 	{"id": 15,  "name": "Or", "familyName": "Gorfinkel", "nameHeb": "אור", "familyNameHeb": "גורפינקל", "birthday": "04/27/1990", "image": "/or.jpg", "facebook": "/or.gorfinkel", "instagram": "null", "group": 6.1, "afterSunset": "null", "gender": 1, "parent": 0, "married": 0},
 	{"id": 16,  "name": "Sharon", "familyName": "Aloni", "nameHeb": "שרון", "familyNameHeb": "אלוני", "birthday": "07/02/1994", "image": "/sharon.jpg", "facebook": "/sharon.aloni.31", "instagram": "/sharonalonii", "group": 6.2, "afterSunset": "null", "gender": 2, "parent": 0, "married": 0},
