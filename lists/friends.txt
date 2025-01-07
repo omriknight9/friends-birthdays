@@ -33,7 +33,7 @@
 	{"id": 25,  "name": "Nofar", "familyName": "Maimoni", "nameHeb": "נופר", "familyNameHeb": "מימוני", "birthday": "08/28/1990", "image": "/nofarM.jpeg", "facebook": "/nofar.maimoni.5", "instagram": "null", "group": 12.2, "afterSunset": "null", "gender": 2, "parent": 1, "married": 1},
 	{"id": 26,  "name": "Mia", "familyName": "Niazov", "nameHeb": "מיה", "familyNameHeb": "ניאזוב", "birthday": "01/10/2023", "image": "/mia.jpeg", "facebook": "null", "instagram": "null", "group": 12.3, "afterSunset": "null", "gender": 2, "parent": 0, "married": 0},
 	{"id": 27,  "name": "Lior", "familyName": "Uziel", "nameHeb": "ליאור", "familyNameHeb": "עוזיאל", "birthday": "08/08/1990", "image": "/lior.jpg", "facebook": "/doctor.lior", "instagram": "null", "group": 13.1, "afterSunset": "null", "gender": 2, "parent": 0, "married": 0},
-	{"id": 28,  "name": "David", "familyName": "Istaharove", "nameHeb": "דוד", "familyNameHeb": "איסטחרוב", "birthday": "05/05/4990", "image": "/david.jpg", "facebook": "/david.istakrov", "instagram": "/davidistaharove", "group": 14.1, "afterSunset": "null", "gender": 1, "parent": 0, "married": 1},
+	{"id": 28,  "name": "David", "familyName": "Istaharove", "nameHeb": "דוד", "familyNameHeb": "איסטחרוב", "birthday": "05/05/1990", "image": "/david.jpg", "facebook": "/david.istakrov", "instagram": "/davidistaharove", "group": 14.1, "afterSunset": "null", "gender": 1, "parent": 0, "married": 1},
 	{"id": 29,  "name": "Daniel", "familyName": "Gershon", "nameHeb": "דניאל", "familyNameHeb": "גרשון", "birthday": "06/07/1993", "image": "/daniel.jpeg", "facebook": "/profile.php?id=100005748434975", "instagram": "/daniel.7.6", "group": 14.2, "afterSunset": "null", "gender": 2, "parent": 0, "married": 1}
 	
     ]
